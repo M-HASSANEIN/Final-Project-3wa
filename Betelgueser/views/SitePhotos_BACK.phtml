@@ -1,0 +1,43 @@
+<div class="site-photos">
+
+    <h1>SITE-PHOTOS</h1>
+
+    <p>
+        <?php if (isset($_GET["error"])) : ?><?=$_GET["error"] ?>
+        <?php else :?><?="" ?>
+        <?php endif?>
+        <?php if (isset($success)) : ?><?= $success ?>
+        <?php else :?><?="" ?>
+        <?php endif?>
+    </p>
+    <div class="over">
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">ID PHOTO</th>
+                    <th scope="col"> PAGE</th>
+                    <th scope="col">PHOTOS</th>
+                    <th scope="col">PHOTO-NAME </th>
+                    <th scope="col">DATE & TIME</th>
+                    <th colspan="2">ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <?php foreach($this->sitephotos as $PHOTO): ?>
+                <tr>
+                    <td data-label="ID PHOTO"><?=htmlspecialchars($PHOTO['id_sitephotos'])?></td>
+                    <td data-label="PAGE">Home-Page</td>
+                    <td data-label="PHOTO"><img src="<?=htmlspecialchars($PHOTO['src'])?>"
+                            alt="<?=htmlspecialchars($PHOTO['alt'])?>"></td>
+                    <td data-label="PHOTO-NAME"><?=htmlspecialchars($PHOTO['alt'])?></td>
+                    <td data-label="DATE & TIME"><?=htmlspecialchars($PHOTO['date'])?></td>
+                    <td data-label="ACTION"><a
+                            href="index.php?page=EDIT-SITE-PHOTOS&PHOTO=<?= htmlspecialchars($PHOTO['id_sitephotos']) ?>"
+                            class="modify button"> <i class="fas fa-pencil-alt"></i> EDIT</a></td>
+                </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+    </div>
+</div>

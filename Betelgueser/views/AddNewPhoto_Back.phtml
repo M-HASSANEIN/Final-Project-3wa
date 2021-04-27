@@ -1,0 +1,48 @@
+<article class="addphoto">
+
+    <h1><?= (isset($photo))?'Modifiy':'Add' ?> Photo </h1>
+    <div class=" buttonadd">
+        <a href="index.php?page=CALLGALLERY"> Cancel</a>
+    </div>
+
+    <form
+        action="index.php?page=<?= (isset($photo))?'ModifyphotoInDataBase&PHOTO='.htmlspecialchars($photo['id_gallery'])."&SRC=".htmlspecialchars($photo['src']):'UpLoadGalleryBack' ?>"
+        method="post" enctype="multipart/form-data">
+
+
+        <?php if (isset($photo)) :?>
+        <div>
+            <img src="<?=htmlspecialchars($photo['src'])?>" alt="<?=htmlspecialchars($photo['alt'])?>">
+        </div>
+
+
+        <div>
+            <label for="image">Change photo</label>
+            <input type="file" id="" name="image" placeholder="image" value="">
+        </div>
+
+        <?php endif ;?>
+
+        <div>
+            <label for="alt">PhotoName</label>
+            <input type="text" id="" name="alt" placeholder="PhotoName"
+                value="<?= (isset($photo)) ? htmlspecialchars($photo['alt'])  : "" ?>">
+
+        </div>
+
+        <div>
+            <button class="button" type="submit" name="submit-photo">Valider</button>
+
+        </div>
+    </form>
+    <p>
+        <?php if (isset($errors)) : ?><?= $errors ?>
+        <?php else :?><?="" ?>
+        <?php endif?>
+        <?php if (isset($success)) : ?><?= $success ?>
+        <?php else :?><?="" ?>
+        <?php endif?>
+    </p>
+
+
+</article>

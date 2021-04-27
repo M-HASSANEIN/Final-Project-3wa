@@ -1,0 +1,45 @@
+<article class="albums">
+    <h1>ALBUMS</h1>
+
+    <div>
+        <a class="botn" href="index.php?page=ADD-ALBUMS-BACK"> Add New Album</a>
+    </div>
+    <p>
+        <?php if (isset($_GET["error"])) : ?><?=$_GET["error"] ?>
+        <?php else :?><?="" ?>
+        <?php endif?>
+        <?php if (isset($errors)) : ?><?= $errors ?>
+        <?php else :?><?="" ?>
+        <?php endif?>
+    </p>
+
+    <div>
+        <ul>
+            <?php foreach ($this->albums as $album): ?>
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn">ACTION</button>
+                    <div class="dropdown-content">
+                        <a class="delete"
+                            href="index.php?page=deletealbum&ALBUM=<?=htmlspecialchars($album['id_album'])?>&NAME=<?=htmlspecialchars($album['name'])?>&IMAGE=<?=htmlspecialchars($album['image'])?>">
+                            <i class="fas fa-trash-alt"></i> DELETE</a>
+                        <a href="index.php?page=ModifyAlbum&ALBUM=<?=htmlspecialchars($album['id_album'])?>"
+                            class="modify"> <i class="fas fa-pencil-alt"></i> EDIT</a>
+                        <!-- <a href="#">Link 3</a> -->
+                    </div>
+                </div>
+                <a href="index.php?page=GALLERY-BACK&id=<?=htmlspecialchars($album['id_album'])?>">
+                    <figure class="add-albums">
+                        <img src="<?=htmlspecialchars($album['image'])?>" alt="<?=htmlspecialchars($album['name'])?>">
+                        <figcaption>
+                            <span><?=htmlspecialchars($album['name'])?></span>
+                        </figcaption>
+                    </figure>
+                </a>
+            </li>
+            <?php endforeach ;?>
+        </ul>
+    </div>
+
+
+</article>

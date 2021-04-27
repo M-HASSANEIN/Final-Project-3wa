@@ -1,0 +1,35 @@
+<article class="book-details">
+
+    <div class="from">
+        <h1>BOOKING-DETAILS</h1>
+        <div class="details">
+            <p>Room Name : <span><?= htmlspecialchars($room["room_name"]) ?></span> </p>
+
+            <p>Room price : <span><?= htmlspecialchars($room['price_perday']) ?> € </span> </p>
+
+            <p>Booking ref : <span><?= htmlspecialchars($booking['id_booking']) ?></span> </p>
+
+            <p>Comments : <span><?= htmlspecialchars($booking['comments']) ?></span> </p>
+
+            <p>Date of the booking : <span><?= htmlspecialchars($booking['date']) ?></span> </p>
+
+            <p>Check in : <span><?= htmlspecialchars($booking['from_date']) ?></span> </p>
+
+            <p>Check out : <span><?= htmlspecialchars($booking['to_date']) ?></span> </p>
+
+            <p>Period of stay : <span><?= htmlspecialchars($booking['period_of_stay']) ?> days </span> </p>
+
+            <p>Total amount ( Price * Days )
+                :
+                <span><?= htmlspecialchars($booking['period_of_stay']) * htmlspecialchars($room['price_perday']) ?> €
+                </span>
+            </p>
+        </div>
+        <div class="submit">
+            <a href="Validebooking-booking-<?= htmlspecialchars($booking['id_booking']) ?>">Validate</a>
+            <a href="editebooking-booking-<?= htmlspecialchars($booking['id_booking']) ?>">Edit My Booking
+            </a>
+            <a href="cancelbooking-booking-<?= htmlspecialchars($booking['id_booking']) ?>">Cancel</a>
+        </div>
+    </div>
+</article>

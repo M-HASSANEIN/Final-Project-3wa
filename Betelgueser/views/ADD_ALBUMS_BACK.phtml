@@ -1,0 +1,47 @@
+<article class="addphoto">
+
+    <h1><?= (isset($album))?'Modifiy':'Add' ?> Album </h1>
+    <div class=" buttonadd">
+        <a href="albumsback"> Cancel</a>
+    </div>
+
+    <form
+        action=" index.php?page=<?= (isset($album))?'ModifyAlbumInDataBase&ALBUM='.htmlspecialchars($album['id_album']).'&Name='.htmlspecialchars($album['name']):'UpLoadAlbum_BACK' ?>"
+        method="post" enctype="multipart/form-data">
+
+
+        <?php if (isset($album)) :?>
+        <div>
+            <img src="<?=htmlspecialchars($album['image'])?>" alt="<?=htmlspecialchars($album['name'])?>">
+        </div>
+        <?php endif ;?>
+
+        <div>
+            <label for="image"><?= (isset($album))?'Modifiy':'Add' ?>-Cover-Photo</label>
+            <input type="file"  name="image" placeholder="image" value="">
+        </div>
+        <input type="hidden"  name="image" placeholder="image" value="<?= (isset($album)) ? htmlspecialchars($album['image'])  : "" ?>">
+
+        <div>
+            <label for="name">Album-Name</label>
+            <input type="text"  name="name" placeholder="Album-Name"
+                value="<?= (isset($album)) ? htmlspecialchars($album['name'])  : "" ?>">
+        </div>
+
+        <div>
+            <button class="button" type="submit" name="submit-album"><?= (isset($album))?'Modifiy':'Add' ?> Album
+            </button>
+        </div>
+        <p>
+            <?php if (isset($errors)) : ?><?= $errors ?>
+            <?php else :?><?="" ?>
+            <?php endif?>
+            <?php if (isset($success)) : ?><?= $success ?>
+            <?php else :?><?="" ?>
+            <?php endif?>
+        </p>
+    </form>
+
+
+
+</article>

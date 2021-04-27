@@ -1,0 +1,73 @@
+<article class="addroom">
+
+    <h1><?=(isset($booking)) ? 'Modifiy' : 'Add'?> Booking </h1>
+    <div class=" buttonadd">
+        <a href="bookingback"> Cancel</a>
+    </div>
+    <p>
+        <?php if (isset($_GET["error"])): ?><?=$_GET["error"]?>
+        <?php else: ?><?=""?>
+        <?php endif?>
+        <?php if (isset($success)): ?><?=$success?>
+        <?php else: ?><?=""?>
+        <?php endif?>
+    </p>
+    <form
+        action="<?=(isset($booking)) ? 'ModifyBooking-Book-' . htmlspecialchars($booking['id_booking']) : 'makebookingback'?>"
+        method="post" enctype="multipart/form-data">
+
+        <?php if (isset($booking)): ?>
+        <div class="customer"> Customer :
+            <?=(isset($booking)) ? htmlspecialchars($booking['email']) : ""?>
+        </div>
+        <div class="customer"> Date of Booking :
+            <?=(isset($booking)) ? htmlspecialchars($booking['date']) : ""?>
+        </div>
+        <div class="customer"> Total Amount :
+            <?=(isset($booking)) ? htmlspecialchars($booking['total_amount']) : ""?>
+            €</div>
+        <div class="customer"> Period of stay :
+            <?=(isset($booking)) ? htmlspecialchars($booking['period_of_stay']) : ""?>
+            days</div>
+        <?php endif?>
+        <?php if (!isset($booking)): ?>
+        <label for="client name">Customer-Name</label>
+        <select name="id_client" placeholder="">
+            <option value="">please select customer email</option>
+            <?php foreach ($this->customers as $customer): ?>
+            <option value="<?=$customer['id_client']?>"><?=$customer['email']?></option>
+            <?php endforeach?>
+        </select>
+        <?php endif?>
+        <label for="room name">Room-Name</label>
+        <select name="id_room" placeholder="room name">
+            <option value="<?=(isset($booking)) ? htmlspecialchars($booking['id_room']) : ""?>">
+                <?=(isset($booking)) ? htmlspecialchars($booking['room_name']) : "please select a room"?></option>
+            <?php foreach ($this->rooms as $room): ?>
+            <option value="<?=$room['id_room']?>"><?=$room['room_name']?></option>
+            <?php endforeach?>
+        </select>
+        <div>
+            <label for="from_date">From</label>
+            <input type="date" id="" name="from_date" placeholder=""
+                value="<?=(isset($booking['from_date'])) ? htmlspecialchars($booking['from_date']) : ""?>" required>
+        </div>
+        <div>
+            <label for="to_date">To</label>
+            <input type="date" id="" name="to_date" placeholder=""
+                value="<?=(isset($booking['to_date'])) ? htmlspecialchars($booking['to_date']) : ""?>" required>
+        </div>
+        <div>
+            <label for="comments">Comments</label>
+            <textarea name="comments" value="" rows="10"
+                cols="30"><?=(isset($booking['comments'])) ? htmlspecialchars($booking['comments']) : ""?></textarea>
+        </div>
+
+        <div>
+            <button class="button" type="submit" name="submit-booking">Valider</button>
+        </div>
+    </form>
+
+
+
+</article>

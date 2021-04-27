@@ -1,0 +1,28 @@
+<article class="about">
+    <h1>ABOUTS</h1>
+    <p>
+        <?php if (isset($_GET["error"])) : ?><?=$_GET["error"] ?>
+        <?php endif?>
+    </p>
+    <div>
+        <ul>
+            <?php foreach ($this->abouts as $about): ?>
+            <li>
+                <div class="dropdown">
+                    <a href="index.php?page=EDITE-ABOUT-BACK&ABOUT=<?=htmlspecialchars($about["id_about"])?>"
+                        class="modify">
+                        <i class="fas fa-pencil-alt"></i> EDIT</a>
+                </div>
+                <div class="photoabout">
+                    <figure class="add-albums">
+                        <img src="<?=htmlspecialchars($about['about_img'])?>"
+                            alt="<?=htmlspecialchars($about['about_img_alt'])?>">
+                    </figure>
+                    <textarea name="" id="" cols="115"
+                        rows="10"><?=html_entity_decode($about['about_content'])?></textarea>
+                </div>
+            </li>
+            <?php endforeach ;?>
+        </ul>
+    </div>
+</article>

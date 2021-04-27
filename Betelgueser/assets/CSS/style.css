@@ -1,0 +1,2378 @@
+/*BETELGUEUSE	        ⛴          Welcome ☸n board
+~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~
+*/
+/* *****************************************************************
+TOOLS /RESET
+***************************************************************** */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 63.5%;
+}
+
+html, body { 
+	margin:0; 
+	padding:0; 
+} 
+
+/* *****************************************************************
+COLORS
+***************************************************************** */
+:root {
+  --gold: #b09067;
+  --white: #fff;
+  --formcolor: #f0efef;
+  --text: black;
+  --turquaz: #008080;
+  --footer :#e9e9e9;
+  --blue:#3b5998;
+  --orange:orangered;
+  --red:red;
+  --balckshadow: #333;	
+  --colortextgrey:rgba(0, 0, 0, 0.4);
+  --shadow:rgba(235, 184, 75, 0.4);
+  --inputtextcolor:#6f6f6f;
+  --background:#d0d0d0;
+  --backgroundfooter:rgb(240, 240, 240);
+
+
+/* *****************************************************************
+FONTS
+***************************************************************** */
+  --default-font: "Shippori Mincho B1", serif;
+  --headerfont: "Monoton", cursive;
+  --montserrat: "Montserrat", sans-serif;
+  --weather-font: "Rimouski";
+}
+
+html{
+	background-color: var(--background);
+}
+body {
+  font-family: var(--default-font);
+  font-size: 1.6rem;
+  color: var(--text);
+  text-align: center;
+  background-image: url("../img/wave-slim.svg"); 
+  background-repeat: no-repeat;
+  background-position: 0 -25px;
+	background-size: 80px 100%;
+
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h1, h2, h3 figcaption, p {
+  font-family: var(--montserrat);
+  font-weight: lighter;
+}
+/*				 ⛴				Waves rules (+ body)
+~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠*/
+.wave {
+	position:fixed;
+	top:  -100px;
+	left: 0;
+	opacity: 75%;
+	z-index: -1;
+	animation: wave 25s ease-in-out infinite;
+}
+
+.wave img{
+	height: 100vh;
+	position:absolute;
+	top:  0;
+	left: 0;
+	opacity: 50%;
+	animation: wave 15s linear infinite;
+}
+
+.wave-light{
+	width:120px;
+	height: 100%;
+	position:fixed;
+	left: 0px;
+	top: 0;
+  background-image: url("../img/wave-light.svg");
+	background-repeat: no-repeat;
+	background-position: top left;
+  background-size: 120px 120%;
+	opacity: 27%;
+  mix-blend-mode:screen;
+}
+/*				 ⛴  	Waves~Keyfr@mes
+~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ */
+@keyframes wave {
+	0% {
+    top: -100px;
+	height: 125vh;	
+	}
+	
+	55% {
+    top: -20px;
+   height: 245vh;
+		}	
+	
+  60% {
+    top: -20px;
+   height: 250vh;
+		}	
+	
+  95% {
+    top: -100px;
+   height:130vh;	
+		}
+  
+	100% {
+    top: -100px;
+   height:125vh;	
+		}
+}
+@-webkit-keyframes wave {
+	0% {
+    top: -100px;
+	height: 125vh;	
+	}
+	
+	55% {
+    top: -20px;
+   height: 245vh;
+		}	
+	
+  60% {
+    top: -20px;
+   height: 250vh;
+		}	
+	
+  95% {
+    top: -100px;
+   height:130vh;	
+		}
+  
+	100% {
+    top: -100px;
+   height:125vh;	
+		}
+}
+/*				   End of waves                  ⛴
+~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠ ~ ͠  */
+
+
+/* *****************************************************************
+GENERAL
+***************************************************************** */
+
+
+.wrapper {
+	margin: auto;
+  line-height: 1.8rem;
+  max-width: 1400px;
+}
+
+main {
+  animation: 1s ease-out 0s 1 fadeInRightBig; 
+  margin: 5rem;
+}
+
+
+/*=== FADE IN DOWN Big ===*/
+
+@-webkit-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(2000px, 0, 0);
+    transform: translate3d(2000px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+  }
+  @keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(2000px, 0, 0);
+    transform: translate3d(2000px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+  }
+/* *****************************************************************
+COOKIES
+***************************************************************** */
+  .cookies {
+    display: none;
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px; 
+    margin-left: -150px;
+    z-index: 1;
+    background-color: var(--balckshadow);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px var(--balckshadow);
+    padding: 25px;
+    animation-name: cookie;
+    animation-duration: 0.6s;
+  }
+  
+  
+  .cookies-message {
+    line-height: 36px;
+    color: var(--gold);
+    font-size: 2rem;
+    font-family: var(--montserrat);
+  }
+  
+  .cookies-accept {
+    line-height: 30px;
+    border: none;
+    border-radius: 5px;
+    color:var(--white);
+    font-weight: 700;
+    text-align: center;
+    background:var(--gold);
+    cursor: pointer;
+    outline: none;
+    font-size: 1.6rem;
+    transition:  250ms ease-in-out;
+    font-family: 'Montserrat', sans-serif;
+    user-select: none;
+    margin-top: 50px;
+  }
+  
+  .cookies-accept:hover {
+    background:var(--turquaz);
+  }
+  
+  @keyframes cookie {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+  }
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  /* *****************************************************************
+ END-COOKIES
+***************************************************************** */
+/* *****************************************************************
+HEADER
+***************************************************************** */
+
+header {
+  color: var(--gold);
+}
+
+header .logo img{
+  display: block;
+  width: 180px;
+  min-width:150px;
+}
+
+header .logo{
+  display: flex;
+}
+
+header .navbar{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.navbar strong {
+  display: block;
+  color: var(--gold);
+  font-size: 5rem;
+  text-transform: uppercase;
+  font-family: var(--headerfont);
+  font-weight: lighter;
+  margin: auto;
+}
+
+header .ss{
+ position:absolute;
+ right: 0;
+ top:10px;
+}
+
+.signin {
+  display: flex;
+  justify-content: flex-end;
+  text-transform: uppercase;
+  font-family: var(--montserrat);
+}
+
+.signin a {
+  border: 2px solid var(--gold);
+  border-radius: 5px;
+  filter: drop-shadow(0 0 8rem var(--gold));
+  -webkit-border-radius: 5px 5px 5px 5px;
+  text-decoration: none;
+  padding: 10px;
+  color: var(--gold);
+  margin: 5px;
+
+}
+
+.signin a:hover {
+  transform: scale(1.09);
+  transition: all 0.3s;
+  color: var(--white);
+  background-color: var(--gold);
+}
+
+header .dropbtn {
+  text-decoration: none;
+  color: var(--white);
+  font-family: var(--montserrat);
+  background-color: var(--gold);
+  -webkit-box-shadow: 0 10px 30px 0 rgba(131, 123, 123, 0.4);
+  box-shadow: 0 10px 30px 0 var(--shadow);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+
+header .dropdown {
+  position: relative;
+  margin: 10px;
+}
+
+
+header .dropdown-content {
+  visibility: hidden; 
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+  font-family: var(--montserrat);
+  -webkit-box-shadow: 0 10px 30px 0 rgba(131, 123, 123, 0.4);
+  box-shadow: 0 10px 30px 0 var(--shadow);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  font-size: 1.4rem;
+  margin-top: 13px;
+  transform: translateY(-2em);
+  z-index: -1;
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+
+
+header .dropdown-content a {
+  color: var(--white);
+  text-decoration: none;
+  display: block;
+  padding: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color:var(--gold);
+  margin: 2px;
+}
+
+
+header .dropdown-content a:hover {
+  background-color:var(--turquaz);
+}
+
+header .dropdown:hover .dropdown-content {
+  visibility: visible; 
+  opacity: 1;
+  z-index: 1;
+  transform: translateY(0%);
+  transition-delay: 0s, 0s, 0.3s; 
+}
+ header .session{
+  display: flex;
+  padding: 0;
+  font-size: 2.2rem;
+}
+header .session p{
+  margin: auto;
+}
+header .session span{
+  text-transform: uppercase;
+}
+header .session a:hover  {
+background-color: var(--turquaz);
+} 
+
+header nav {
+  font-family: var(--montserrat);
+  padding: 2rem 3rem;
+  text-align: center;
+  display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+  margin-top: 10px;
+}
+
+header .ss p:nth-child(2){
+  font-size: 1.2rem;
+  text-align: right;
+  padding: 0px;
+  text-decoration: underline;
+}
+
+header .ss p:nth-child(2) a{
+  margin: 0;
+}
+
+header nav a {
+  color: var(--gold);
+  text-decoration: none;
+  margin: 0px 10px;
+  padding: 10px 10px;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+  font-size: 3rem;
+  
+}
+
+header nav a:before, header nav a:after {
+  position: absolute;
+  opacity: 0.5;
+  height: 100%;
+  width: 2px;
+  content: "";
+  background: var(--gold);
+  transition: all 0.3s;
+}
+
+header nav a:before {
+  left: 0px;
+  top: 0px;
+}
+
+header nav a:after {
+  right: 0px;
+  bottom: 0px;
+}
+
+header nav a:hover:before, header nav a:hover:after {
+  opacity: 1;
+  height: 2px;
+  width: 100%;
+}
+
+/* *****************************************************************
+HOME
+***************************************************************** */
+
+/* *****HOMECLASS SLIDER ***** */
+.home{
+  margin: 5rem;
+}
+.home .slider h2 {
+  padding-top: 120px;
+  opacity: 1;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  bottom: -50px;
+  color: var(--gold);
+  text-transform: uppercase;
+  transition: transform ease-in-out 0.5s;
+  animation: slidedown 15s infinite;
+  font-family: var(--headerfont);
+  font-size: 3.5rem;
+}
+
+@keyframes slidedown {
+  0% {
+    transform: translateY(200px);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+}
+
+.home .slider{
+	position: relative;
+	overflow: hidden;
+  margin: 10rem  0rem;
+  filter: drop-shadow(0 0 1rem var(--balckshadow));
+}
+ .home .slider .slider-items .item img{
+	width: 100%;
+  height: 550px;
+	display: block;
+  object-fit: cover;
+	animation:zooom 2.5s ease;
+}
+
+@keyframes zooom{
+	0%{transform: scale(1.10);opacity: 0.7}
+	50%{transform: scale(1.10);}
+	100%{transform: scale(1);opacity:1}
+}
+.home .slider .slider-items .item{
+	display: none;
+	position: relative;
+}
+
+.home .slider .slider-items .item.active{
+	display: block;
+}
+
+/* *****HOME-SECTION-BOAT ***** */
+
+.home .boat {
+  margin: 20rem  0rem; 
+}
+
+.home .boat h1 {
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 5rem;
+  margin-bottom: 5rem;
+  font-family: var(--headerfont);
+  color: var(--gold);
+  text-align: center;
+}
+.home .boat p{
+  text-align: justify;
+  line-height: 2.2rem;
+  font-size: 1.8rem;
+}
+.home .bet1 {
+  float: right;
+  width: 50%;
+  margin:0px 0px 20px 20px ; 
+  filter: drop-shadow(0 0 1rem var(--balckshadow));
+}
+.home .boat .bet2 {
+  float: left;
+  width: 40%;
+  margin:0px 20px 10px 0px ;
+  filter: drop-shadow(0 0 1rem var(--balckshadow)); 
+}
+
+/* *****HOME-SECTION-PHOTOS ***** */
+
+.home .photos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30rem;
+  margin-bottom: 20rem;
+}
+
+.home .container {
+  position: relative;
+  display: flex;
+  width: 120%;
+  filter: drop-shadow(0 0 1rem var(--balckshadow));
+}
+
+.home .photos .container .box {
+  width: 275px;
+  height: 175px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.9s;
+  cursor: pointer;
+}
+
+.home .photos .box:hover {
+  z-index: 1;
+  transform: scale(2);
+}
+
+.home .photos .container .box .imgBx:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(180deg, rgb(136, 134, 134), rgb(143, 141, 140));
+  mix-blend-mode: multiply;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.home .photos .container .box:hover .imgBx:before {
+  opacity: 1;
+}
+
+.home .photos .container .box .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  object-fit: cover;
+}
+
+.home .photos .container .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  padding: 20px;
+  align-items: flex-end;
+}
+
+.home .photos h2 {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  color: var(--white);
+  transition: 0.5s;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  transform: translateY(200px);
+}
+
+.home .photos .container .box:hover h2 {
+  transform: translateY(0);
+}
+
+.home .photos p {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  color: var(--white);
+  transition: 0.5s;
+  text-transform: uppercase;
+  font-size: 1rem;
+  transform: translateY(200px);
+}
+
+.home .photos .container .box:hover p {
+  transform: translateY(0);
+}
+
+/* *****************************************************************
+END OF HOME
+***************************************************************** */
+/* *****************************************************************
+  albums
+***************************************************************** */
+
+.albums h1 {
+  font-family: var(--headerfont);
+  color: var(--gold);
+}
+
+.albums {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem  0rem; 
+  margin: auto;
+}
+
+.albums ul img {
+  width:320px;
+  height: 320px;
+  align-self: stretch;
+  justify-self: stretch;
+  object-fit: cover;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 1rem var(--balckshadow));
+  transition: all ease-in-out cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.albums ul {
+  padding: 3rem 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+}
+.albums figure ,
+.albums figcaption{
+  margin: 0px;
+}
+
+.albums .add-albums {
+  position: relative;
+ 
+}
+.albums .add-albums figcaption {
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition:all 0.3s;  
+}
+.albums .add-albums:hover figcaption {
+  background-color: rgba(76,67,67,.9);
+  opacity:0.8;
+  top:0px;
+  left: 0px;
+  right: 0px;
+  bottom:0px;
+  border: 10px solid var(--white);
+}
+
+.albums span{
+  font-family: var(--montserrat);
+  color: var(--white);
+  font-size: 2.2rem;
+  text-transform: uppercase;
+}
+  
+.albums figure:hover {
+  z-index: 1;
+  transform: scale(1.08);
+  transition: 0.3s;
+}
+
+.albums li {
+  list-style: none;
+  margin: 10px;
+}
+
+.albums .button {
+  width: 200px;
+  background-color: var(--gold);
+  color: var(--white);
+  padding: 14px 20px;
+  margin: 50px 0;
+  border: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(131, 123, 123, 0.4);
+  box-shadow: 0 10px 30px 0 var(--shadow);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  text-decoration: none;
+  font-family: var(--montserrat);
+}
+
+.albums .button:hover {
+  background-color: var(--turquaz);
+}
+.albums .add{
+  margin: 50px;
+}
+
+/* *****************************************************************
+ ADD--albums
+***************************************************************** */
+
+.add-albums {
+  margin: 5rem 0rem;
+}
+.add-albums h1 {
+  text-align: center;
+  color: var(--gold);
+  font-family: var(--montserrat);
+}
+.add-albums label{
+  color:var(--gold);
+}
+.add-albums input[type="text"]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid var(--formcolor);
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: var(--formcolor);
+}
+.add-albums form {
+  border-radius: 5px;
+  background-color: var(--white);
+  padding: 20px;
+  text-align: left;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  font-family: var(--montserrat);
+}
+.add-albums .submit{
+  margin-top: 50px;
+  text-align: center;
+}
+.add-albums form a {
+  background-color: var(--gold);
+  border: none;
+  color:var(--white);
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size:  1.8rem;;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(131, 123, 123, 0.4);
+  box-shadow: 0 10px 30px 0 var(--shadow);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  font-family: var(--montserrat);
+}
+.add-albums form button{
+  background-color: var(--gold);
+  border: none;
+  color:var(--white);
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(131, 123, 123, 0.4);
+  box-shadow: 0 10px 30px 0 var(--shadow);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+}
+.add-albums form a:hover, 
+.add-albums form button:hover{
+background-color: var(--turquaz);
+}
+.add-albums .error{
+  margin: 20px;
+  text-align: center;
+  font-size: 1.8rem;
+  color:var(--turquaz);
+}
+
+.add-albums .btnload {
+  border: none;
+  display:inline-block;
+  position:relative;
+  text-align: left;
+  margin: 20px 0px;
+  font-family: var(--montserrat);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  font-size:  1.8rem;
+  border: 1px solid var(--formcolor);
+  box-sizing: border-box;
+  background-color: var(--formcolor);
+  width: 100%;
+  color:var(--inputtextcolor);
+}
+
+.add-albums .uploadButton:hover {
+  background-color: var(--turquaz);
+}
+.add-albums .btnload input[type="file"]{
+  background-color: var(--turquaz); 
+}
+.add-albums .btnload input[type="file"] {
+
+  width: 100%;
+  opacity: 0;
+  cursor:pointer;
+  position:absolute;
+  left:0;
+}
+.add-albums .uploadButton {
+  background-color: var(--gold);
+  border: none;
+  border-radius: 5px;
+  color:var(--white);
+  cursor:pointer;
+  padding: 10px;
+  margin: 0px 15px 0px 0px;
+}
+
+/* *****************************************************************
+  GALLERY
+***************************************************************** */
+
+.gallery h1 {
+  font-family: var(--headerfont);
+  color: var(--gold);
+  margin-bottom: 50px;
+}
+.gallery h3{
+  color: var(--gold);
+  font-family: var(--montserrat);
+}
+.gallery {
+  display: flex;
+  flex-direction: column;
+  margin: 5rem  0rem; 
+  min-height: 100vh;
+}
+
+.gallery ul img {
+  width:340px;
+  height: 320px;
+  object-fit: cover;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.gallery ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, auto));
+  grid-gap: 10px;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.gallery ul img:hover {
+  z-index: 1;
+  transform: scale(1.04);
+  opacity: 1;
+  box-shadow: 0px 0px 180px 10px  var(--background);
+  -webkit-box-shadow: 0px 0px 180px 10px var(--background);
+  -moz-box-shadow: 0px 0px 180px 10px var(--background);;
+}
+
+.gallery .form {
+  font-family: var(--montserrat);
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery input[type="text"],
+.gallery select
+ {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid var(--formcolor);
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.gallery button {
+  width: 100%;
+  background-color: var(--gold);
+  color: var(--white);
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(131, 123, 123, 0.4);
+  box-shadow: 0 10px 30px 0 var(--shadow);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.gallery button:hover {
+  background-color: var(--turquaz);
+}
+.gallery .back {
+  background-color: var(--gold);
+  border: none;
+  color:var(--white);
+  padding: 15px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size:  1.8rem;;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(131, 123, 123, 0.4);
+  box-shadow: 0 10px 30px 0 var(--shadow);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  font-family: var(--montserrat);
+}
+
+.gallery  .back:hover{
+background-color: var(--turquaz);
+}
+
+.gallery .btnload {
+  background-color:var(--white);
+  border: none;
+  display:inline-block;
+  position:relative;
+  text-align: left;
+  margin: 20px 00px;
+  font-family: var(--montserrat);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  text-transform: uppercase;
+  font-size:  1.8rem;
+}
+
+.gallery .uploadButton:hover {
+  background-color: var(--turquaz);
+}
+.gallery .btnload input[type="file"]{
+  background-color: var(--turquaz); 
+}
+.gallery .btnload input[type="file"] {
+  display: input-block;
+  width: 100%;
+  opacity: 0;
+  cursor:pointer;
+  position:absolute;
+  left:0;
+}
+.gallery .uploadButton {
+  background-color: var(--gold);
+  border: none;
+  border-radius: 5px;
+  color:var(--white);
+  cursor:pointer;
+  padding: 10px;
+  margin: 0px 15px 0px 0px;
+}
+
+/* *****************************************************************
+MODEL -GALLERY
+***************************************************************** */
+.gallery .modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+}
+
+
+.gallery .modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 900px;
+  position: relative;
+}
+
+
+.gallery .modal-content {  
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)} 
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.gallery .close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: var(--gold);
+  font-size: 4rem;
+  font-weight: bolder;
+  transition: 0.3s;
+}
+
+.gallery .close:hover,
+.gallery .close:focus {
+  color:var(--turquaz);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.gallery .modal img{
+  position: relative;
+}
+/* Next & previous buttons */
+
+.gallery .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  font-weight: bold;
+  font-size:4rem;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+  color: var(--gold);
+}
+.gallery .prev{
+  cursor: pointer;
+  position: absolute;
+  left: 10rem;
+  top: 50%;
+  padding: 16px;
+  margin-top: -50px;
+  font-weight: bold;
+  font-size:4rem;
+  user-select: none;
+  -webkit-user-select: none;
+  color: var(--gold);
+}
+
+
+.gallery .next {
+  right: 10rem;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.gallery .next:hover,
+.gallery .prev:hover
+{
+  color: var(--turquaz);
+}
+/* *****************************************************************
+  END OF GALLERY
+***************************************************************** */
+/* *****************************************************************
+ DIVING
+***************************************************************** */
+.diving{
+  margin: 5rem  5rem; 
+}
+.diving h1{
+  font-family: var(--headerfont);
+  color:var(--gold);
+}
+.diving .scubadiving{
+  width: 50%;
+  float: right;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  filter: drop-shadow(0 0 1rem var(--balckshadow));
+}
+.diving p{
+  text-align: justify;
+  font-family: var(--montserrat);
+  line-height: 2.3rem;
+  font-size: 1.8rem;
+}
+.diving h2{
+  text-align: left;
+  font-family: var(--montserrat);
+  color: var(--gold);
+}
+.diving .techdiving{
+  width: 50%;
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 40px;
+  filter: drop-shadow(0 0 1rem var(--balckshadow));
+
+}
+.diving .freediving{
+  width: 50%;
+  height: 900px;
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 40px;
+  filter: drop-shadow(0 0 1rem var(--balckshadow));
+
+}
+.diving section:nth-of-type(2){
+ margin-bottom: 200px;
+}
+.diving section:nth-of-type(3){
+  min-height: 900px; 
+}
+.diving section{
+  margin-top: 80px;
+}
+.diving a{
+ text-decoration:none ;
+ color: var(--gold);
+ font-family: var(--montserrat);
+
+}
+/* *****************************************************************
+  END-DIVING
+***************************************************************** */
+/* *****************************************************************
+ ROOMS
+***************************************************************** */
+.rooms {
+  margin: 5rem  0rem; 
+  min-height: 100vh; 
+}
+.rooms article{
+  padding: 5rem;
+  background-color: var(--white);
+  border-radius: 5px 5px 5px 5px;
+  -webkit-box-shadow: 0 0 2rem var(--balckshadow);
+  box-shadow: 0 0 2rem var(--balckshadow);
+  margin: 2rem;
+}
+.rooms h1 {
+  font-family: var(--headerfont);
+  text-align: center;
+  color: var(--gold);
+  margin-top: 50px;
+}
+
+.rooms .info {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+}
+
+.rooms .info .big {
+  width: 400px;
+  margin-right: 45px;
+  border-radius: 5px;
+  float: left;
+  filter: drop-shadow(0 0 1rem var(--balckshadow));
+  /* padding-bottom: 100px; */
+}
+
+.rooms h3 {
+  text-align: left;
+  color: var(--gold);
+  font-family: var(--montserrat);
+}
+
+.rooms .info a {
+  background-color: var(--gold);
+  padding: 15px;
+  color: var(--white);
+  text-decoration: none;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(131, 123, 123, 0.4);
+  box-shadow: 0 10px 30px 0 var(--shadow);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
+  float: right;
+  font-family: var(--montserrat);
+}
+.rooms .info a:hover{
+background-color: var(--turquaz);
+}
+
+.rooms article p {
+  text-align: justify;
+  line-height: 2.4rem;
+  padding: 0px;
+  margin: 0;
+
+}
+.rooms .note{
+  color: var(--turquaz);
+  font-size: 2.5rem;
+  font-family: var(--montserrat);
+}
+/* *****************************************************************
+  END OF  ROOMS 
+***************************************************************** */
+
+/* *****************************************************************
+bookING
+***************************************************************** */
+
+.booking {
+  margin: 5rem  10rem; 
+}
+
+.booking h1 {
+  text-align: center;
+  color: var(--gold);
+  font-family: var(--headerfont);
+}
+.booking form img{
+  filter: drop-shadow(0 0 1rem var(--balckshadow));
+  border-radius: 5px 5px 5px 5px; 
+}
+.booking > input,.booking textarea, .booking input,.booking select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid var(--formcolor);
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: var(--formcolor);
+}
+
+.booking form {
+  border-radius: 5px;
+  background-color: var(--white);
+  padding: 20px;
+  text-align: left;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  font-family: var(--montserrat);
+}
+.booking .submit{
+  margin-top: 50px;
+  text-align: center;
+}
+.booking form a{
+  background-color: var(--gold);
+  color:var(--white);
+  padding: 16px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size:  1.8rem;;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(131, 123, 123, 0.4);
+  box-shadow: 0 10px 30px 0 var(--shadow);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  font-family: var(--montserrat);
+}
+
+.booking form button{
+  background-color: var(--gold);
+  border: none;
+  color:var(--white);
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size:  1.8rem;;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(131, 123, 123, 0.4);
+  box-shadow: 0 10px 30px 0 var(--shadow);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  font-family: var(--montserrat);
+}
+
+.booking form a:hover, 
+.booking form button:hover{
+background-color: var(--turquaz);
+}
+.booking .error{
+  margin: 20px;
+  text-align: center;
+  font-size: 1.8rem;
+  color:var(--turquaz);
+}
+
+.booking img{
+  width: 100%;
+}
+.booking .errordate{
+  text-align: center;
+  color: var(--red);
+  font-family: var(--montserrat);
+  font-size: 2rem;
+}
+/* *****************************************************************
+END-bookING
+***************************************************************** */
+/* *****************************************************************
+bookING-details
+***************************************************************** */
+.book-details{
+  margin: 5rem  10rem;  
+}
+
+.book-details .from {
+  border-radius: 5px;
+  background-color: var(--white);
+  padding: 20px;
+  text-align: left;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  font-family: var(--montserrat);
+  margin-top: 50px;
+  text-align: center;
+}
+
+.book-details h1{
+  font-family: var(--headerfont);
+  color: var(--gold);
+}
+.book-details p{
+  color: var(--gold);
+  font-weight: bolder;
+}
+
+.book-details .details{
+ text-align: left;
+ padding: 50px 120px;
+ line-height: 2.4rem;
+}
+.book-details .details span{
+  color: var(--inputtextcolor);
+  font-weight: normal;
+}
+.book-details a {
+  background-color: var(--gold);
+  border: none;
+  color:var(--white);
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size:  1.8rem;;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(131, 123, 123, 0.4);
+  box-shadow: 0 10px 30px 0 var(--shadow);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  font-family: var(--montserrat);
+}
+.book-details .from a:hover 
+{
+background-color: var(--turquaz);
+}
+
+/* *****************************************************************
+END-bookING-DETAILS
+***************************************************************** */
+/* *****************************************************************
+  ABOUT
+***************************************************************** */
+
+.about {
+  margin: 5rem  0rem; 
+}
+
+.about h1{
+  font-family: var(--headerfont);
+  text-align: center;
+  color: var(--gold);
+  
+}
+.about h2 {
+  text-align: left;
+  padding: 30px 0px 5px;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.about .BET1 {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: 60%;
+  filter: drop-shadow(0 0 1rem var(--balckshadow));
+}
+
+.about p {
+  line-height: 2.3rem;
+  text-align: justify;
+  font-size: 1.9rem;
+}
+
+.about .BET2 {
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  width: 60%;
+  filter: drop-shadow(0 0 1rem var(--balckshadow));
+}
+.about section:nth-of-type(3) h1{
+
+  text-align: left;
+}
+/* *****************************************************************
+  END OF  ABOUT
+***************************************************************** */
+
+/* *****************************************************************
+REGISTER
+***************************************************************** */
+
+.register {
+  margin: 10rem  20rem; 
+}
+
+.register h1 {
+  text-align: center;
+  color: var(--gold);
+  font-family: var(--montserrat);
+}
+
+.register > input,.register textarea, .register input,.register select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid var(--formcolor);
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: var(--formcolor);
+}
+
+.register form {
+  border-radius: 5px;
+  background-color: var(--white);
+  padding: 20px;
+  text-align: left;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  font-family: var(--montserrat);
+}
+.register .submit{
+  margin-top: 50px;
+  text-align: center;
+}
+.register form a,
+.register form button
+ {
+  background-color: var(--gold);
+  border: none;
+  color:var(--white);
+  padding: 10px 40px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size:  1.8rem;;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(131, 123, 123, 0.4);
+  box-shadow: 0 10px 30px 0 var(--shadow);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  font-family: var(--montserrat);
+}
+
+.register form a:hover, 
+.register form button:hover{
+background-color: var(--turquaz);
+}
+.register .error{
+  margin: 20px;
+  text-align: center;
+  font-size: 1.8rem;
+  color:var(--turquaz);
+}
+
+/* *****************************************************************
+LOGIN
+***************************************************************** */
+.login{
+  margin-bottom: 50rem;
+  margin-top: 10rem;
+}
+.login form{
+  font-family: var(--montserrat);
+}
+.login .wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+}
+
+.login  #formContent {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background:var(--white);
+  padding: 30px;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.login #formFooter {
+  background-color: var(--formcolor);
+  border-top: 1px solid #dce8f1;
+  padding: 25px;
+  text-align: center;
+  -webkit-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+}
+.login h2.inactive {
+  color:var(--formcolor)
+}
+
+.login  h2.active {
+  color:var(--gold);
+  text-align: center;
+  font-family: var(--montserrat);
+}
+
+.login input[type=button],.login input[type=submit],.login input[type=reset]  {
+  background-color: var(--gold);
+  border: none;
+  color:var(--white);
+  padding: 15px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(131, 123, 123, 0.4);
+  box-shadow: 0 10px 30px 0 rgba(235, 184, 75, 0.4);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  margin-top: 5rem;
+}
+
+.login input[type=button]:hover, .login input[type=submit]:hover, .login input[type=reset]:hover  {
+  background-color: var(--turquaz);
+}
+
+.login input[type=button]:active, .login input[type=submit]:active, .logininput[type=reset]:active  {
+  -moz-transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -o-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  transform: scale(0.95);
+}
+
+.login input[type=text],
+.login input[type=password],
+.login input[type=email]
+ {
+  background-color:var(--formcolor);
+  border: none;
+  color: var(--balckshadow);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 85%;
+  border: 2px solid var(--formcolor);
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.login input[type=text]:focus,.login input[type=password]:focus,
+.login input[type=email]:focus
+ {
+  background-color: var(--white);
+  border-bottom: 2px solid var(--gold);
+}
+
+.login input[type=text]:placeholder,
+.login input[type=password]:placeholder
+{
+  
+  color:var(--formcolor);
+}
+.login h3{
+  font-size: 1.3rem;
+  font-family: var(--montserrat);
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 2.4rem;
+}
+
+/* Simple CSS3 Fade-in Animation */
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.fadeIn {
+  opacity:0;
+  -webkit-animation:fadeIn ease-in 1;
+  -moz-animation:fadeIn ease-in 1;
+  animation:fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode:forwards;
+  -moz-animation-fill-mode:forwards;
+  animation-fill-mode:forwards;
+
+  -webkit-animation-duration:1s;
+  -moz-animation-duration:1s;
+  animation-duration:1s;
+}
+
+.fadeIn.first {
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+
+.fadeIn.second {
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.fadeIn.third {
+  -webkit-animation-delay: 0.8s;
+  -moz-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.fadeIn.fourth {
+  -webkit-animation-delay: 1s;
+  -moz-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+/* Simple CSS3 Fade-in Animation */
+.underlineHover:after {
+  display: block;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 2px;
+  background-color:var(--turquaz);
+  content: "";
+  transition: width 0.2s;
+  
+}
+
+.underlineHover:hover {
+  color:var(--turquaz);
+}
+
+.underlineHover:hover:after{
+  width: 100%;
+  color:var(--turquaz);
+}
+.underlineHover{
+  text-decoration: none;
+  font-family: var(--montserrat);
+  color: var(--gold);
+}
+
+/* OTHERS */
+
+*:focus {
+    outline: none;
+} 
+
+#icon {
+  width:40%;
+}
+.login .error{
+  text-decoration: none;
+  font-family: var(--montserrat);
+  color: var(--turquaz); 
+}
+/* *****************************************************************
+MYBOOKKING
+***************************************************************** */
+.mybooking{
+  background-color: var(--white);
+  margin: 10rem  5rem;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3)
+}
+
+.mybooking h1 {
+  text-align: center;
+  color: var(--gold);
+  font-family: var(--headerfont);
+  padding: 25px;
+  margin: auto;
+  
+}
+.mybooking table {
+
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+  font-family: var(--montserrat);
+  
+}
+.mybooking table tr {
+  border: 1px solid #ddd;
+}
+
+
+.mybooking table th,
+.mybooking table td {
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.mybooking .customer{
+  width: 200px;
+}
+.mybooking table th {
+  text-transform: uppercase;
+  background-color: var(--gold);
+  color: var(--white);
+ 
+}
+  /* *****************************************************************
+END-MYBOOKING
+***************************************************************** */
+
+/* *****************************************************************
+FOOTER
+***************************************************************** */
+
+footer  {
+  position: relative;
+  margin-top: 100px;
+  background: var(--backgroundfooter);
+  min-height: 500px;
+}
+footer  section {
+  display: flex;
+  justify-content: space-around;
+}
+ footer  aside  {
+  margin-top: 50px;
+}
+
+footer  h3{
+  text-transform: uppercase;
+  color: var(--colortextgrey); 
+  transition: all 0.3s;
+  transform: scale(0.8); 
+  font-family: var(--montserrat);
+}
+
+footer  h3:hover{
+  color: var(--gold);
+  transform: scale(1);
+  opacity: 1;
+}
+footer .fab{
+padding: 10px;
+}
+footer .fa-facebook-square{
+  color:var(--blue);
+  font-size: 4rem;
+}
+
+footer .fa-instagram  {
+  color:var(--orange);
+  font-size: 4rem;
+}
+
+footer .fa-youtube  {
+  color:var(--red);
+  font-size: 4rem;
+}
+footer aside .social{
+  display: flex;
+  margin-top: 80px;
+}
+
+
+footer aside form{
+  margin-top: 80px;
+}
+
+footer aside:nth-of-type(3) input[type="text"]{
+ margin: 10px;
+ border: none;
+ font-family: var(--montserrat);
+ display: inline-block;
+ padding: 10px 32px;
+ background-color: var(--white);
+}
+
+footer aside:nth-of-type(3) input[type="submit"]{
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-family: var(--montserrat);
+  font-size: 1.2rem;
+  background-color: var(--gold);
+  color: var(--white);
+  padding: 10px 25px;
+  margin: 10px;
+  
+ }
+footer .submit{
+  display: flex;
+}
+
+footer aside:nth-of-type(4){
+font-family: var(--montserrat);
+color:var(--balckshadow);
+
+}
+footer aside:nth-of-type(3) input[type="submit"]:hover{
+background-color: var(--turquaz);
+}
+footer .contact{
+  margin-top: 80px;
+}
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+footer li{
+  margin: 20px 0px;
+  text-align: center;
+}
+footer aside:nth-of-type(4) .fas{
+  margin: 10px;
+  color: var(--gold);
+}
+footer .error{
+  margin: 20px;
+  text-align: center;
+  font-size: 1.8rem;
+  color:var(--turquaz);
+}
+footer .weatherGadget{
+  font-family: var(--weather-font);
+  line-height: 1.4rem;
+  text-align: center;
+  color: var(--balckshadow) ;
+}
+footer .weatherGadget .tmp div {
+  margin: 20px;
+}
+
+footer .weatherGadget a{
+  font-size: 1.2rem;
+  color: var(--turquaz);
+  font-family: var(--montserrat);
+ }
+
+footer .weatherGadget span{
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+
+/* *****************************************************************
+---------------------------------MEDIA ----------------------------
+***************************************************************** */
+
+/* *****************************************************************
+TAB
+***************************************************************** */
+@media only screen and (max-width: 1660px) {
+  .home .container {
+    flex-wrap: wrap;
+    justify-content: center;
+   }
+   .rooms .info .big {
+     padding-bottom: 100px; 
+  }
+ table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+    padding: 25px;
+  }
+  
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+
+
+}
+@media only screen and (max-width: 992px) {
+  
+  header nav a {
+    font-size: 2rem;
+  }
+  
+  .ss {
+   margin-right:20px;
+  }
+  .home  {
+    margin: 0rem  3rem; 
+  }
+  .home .slider h2 {
+    font-size: 3rem;
+    left: 20px;
+  }
+  .home .bet1 {
+    width: 60%;
+    margin:0px 0px 10px 20px ; 
+  }
+  .home .boat .bet2 {
+    width: 50%;
+    margin:0px 20px 20px 0px ; 
+  }
+  .home .container {
+   flex-wrap: wrap;
+   justify-content: center;
+  }
+  .home .photos .box:hover {
+    z-index: 1;
+    transform: scale(1.4);
+  }
+  .albums ul  {
+    justify-content: center;
+  }
+  .add-albums {
+    margin: 0rem 3rem;
+  }
+  .gallery {
+    margin: 0rem  3rem; 
+  }
+  .gallery li{
+    margin: 0;
+    padding: 0;
+  }
+ 
+  .diving .scubadiving{
+    width: 70%;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+  .diving .techdiving{
+    width: 60%;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+  .diving .freediving{
+    margin-bottom: 10px;
+  }
+  .rooms .info .big {
+    width: 100%;
+    margin-bottom: 30px;
+    padding-bottom: 0; 
+  }
+  .booking form a {
+    padding: 16px 30px;
+  }
+  .booking form button{
+    padding: 15px 40px;
+  }
+  .book-details a {
+    padding: 15px 30px;
+  }
+  .about  {
+    margin: 0rem  3rem; 
+  }
+  .register {
+    margin: 5rem  10rem; 
+  }
+  .register form a,
+  .register form button
+   {
+    margin: 5px 5px 40px 5px;
+   }
+   .gallery .next {
+    top: 25%;
+    margin-top: -50px;
+  }
+  .gallery .prev{
+    left: 0rem;
+    top: 25%;
+    padding: 16px;
+    margin-top: -50px; 
+  }
+  .gallery .next {
+    right: 0rem;
+    }
+  footer  section {
+  flex-wrap: wrap;
+  }
+  footer aside{
+   width: 50%;
+  }
+  footer .social{
+   justify-content:center;
+  }
+  footer .submit{
+    justify-content:center;
+  }
+
+}
+/* *****************************************************************
+MOBILE
+***************************************************************** */
+
+@media only screen and (max-width: 600px) {
+  
+  .wave-light {
+    height: 250%;
+    left: -50px;
+    top: -200px;
+  }
+  header .logo{
+   flex-direction: column;
+   margin: auto;
+   margin-top: 50px;
+   margin-bottom: 50px; 
+  }
+  header .logo img{
+   margin: auto;
+  }
+  header .navbar{
+   flex-direction: column;
+  }  
+  header nav  {
+    flex-direction: column;
+    margin: auto;
+    width: 60%;
+  } 
+  header .navbar strong {
+  font-size:  4rem;
+  }
+  header nav a{
+    margin: 10px;
+  }
+  .home section:nth-of-type(1){
+    display: none;
+  }
+  .home .bet1,
+  .home .boat .bet2 {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .home .boat {
+    margin: 5rem 0rem;
+  }
+  .home .photos {
+    margin-top: 10rem;
+  }
+  .add-albums form a {
+    padding: 15px 20px;
+  }
+  .add-albums form button {
+    padding: 15px 20px;
+  }
+  .diving .scubadiving,
+  .diving .techdiving,
+  .diving .freediving
+  {
+    width: 100%;
+  }
+  .rooms .info { 
+    margin: 0px;
+  }
+  .rooms article { 
+    background-color:unset;
+    box-shadow: unset;
+}
+  .booking {
+    margin: 0rem  3rem; 
+  }
+  .booking form a {
+    padding: 11px 30px;
+  }
+  .booking form button{
+    padding: 10px 40px;
+  }
+  .book-details{
+    margin: 0rem  3rem; 
+  }
+  .book-details .details{
+    padding: 20px 40px;
+   }
+  .book-details a{
+    padding: 15px 10px;
+    font-size: 1.6rem; 
+   }
+  .about .BET1,
+  .about .BET2
+   {
+    width: 100%;
+   }
+   .register {
+    margin: 5rem  3rem; 
+  }
+  .gallery .next {
+    top: 15%;
+    margin-top: -50px;
+  }
+  .gallery .prev{
+    left: 0rem;
+    top: 15%;
+    padding: 16px;
+    margin-top: -50px; 
+  }
+  .gallery .next {
+    right: 0rem;
+    }
+  
+
+}
+@media only screen and (max-width: 482px) {
+  .home .photos .box:hover {
+    z-index: 1;
+    transform: scale(1.6);
+  }
+  .booking form a {
+    padding: 11px 30px;
+  }
+  .booking form button{
+    padding: 10px 40px;
+  }
+  .book-details .details{
+    padding: 10px 5px;
+   }
+  .book-details a{
+   padding: 10px 5px;
+   font-size: 1.6rem;
+   margin: 5px ; 
+  } 
+  .register form a,
+  .register form button
+  {
+    padding: 10px 20px;
+    margin: 20px 10px 20px 10px;
+  }
+  .gallery .next {
+  top: 15%;
+  margin-top: -50px;
+  }
+  .gallery .prev{
+  left: 0rem;
+  top: 15%;
+  padding: 16px;
+  margin-top: -50px; 
+  }
+  .gallery .next {
+  right: 0rem;
+  }
+  .login input[type="button"], .login input[type="submit"], .login input[type="reset"] {
+    padding: 10px 20px;
+    width: 85%;
+  }
+  footer section{
+  flex-direction: column;
+ 
+  }
+  footer aside{
+    width:100%;
+  }
+
+}

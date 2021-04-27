@@ -1,0 +1,72 @@
+<article class="addroom">
+
+    <h1><?= (isset($room))?'Modifiy':'Add' ?> Room </h1>
+    <div class=" buttonadd">
+        <a href="RoomsBack"> Cancel</a>
+    </div>
+    <p>
+        <?php if (isset($errors)) : ?><?= $errors ?>
+        <?php else :?><?="" ?>
+        <?php endif?>
+        <?php if (isset($success)) : ?><?= $success ?>
+        <?php else :?><?="" ?>
+        <?php endif?>
+    </p>
+    <form
+        action=" index.php?page=<?= (isset($room))?'ModifyRoomInDataBase&ROOM='.htmlspecialchars($room['id_room']):'AddRoomDbase' ?>"
+        method="post" enctype="multipart/form-data">
+
+        <div>
+            <label for="status">Status</label>
+            <input type="text" id="inputtext" name="status" placeholder="Status"
+                value="<?= (isset($room)) ? htmlspecialchars($room['status'])  : "" ?>">
+        </div>
+        <div>
+            <label for="room_name">RoomName</label>
+            <input type="text" id="inputtext" name="room_name" placeholder="RoomName"
+                value="<?= (isset($room)) ? htmlspecialchars($room['room_name'])  : "" ?>">
+        </div>
+        <div>
+            <label for="room_number">RoomNumber</label>
+            <input type="text" id="inputtext" name="room_number" placeholder="RoomNumber"
+                value="<?= (isset($room)) ? htmlspecialchars($room['room_number'])  : "" ?>">
+        </div>
+        <div>
+            <label for="capacity">Capacity</label>
+            <input type="text" id="inputtext" name="capacity" placeholder="Capacity"
+                value="<?= (isset($room)) ? htmlspecialchars($room['capacity'])  : "" ?>">
+        </div>
+        <div>
+            <label for="price_perday">Price</label>
+            <input type="text" id="inputtext" name="price_perday" placeholder="Price"
+                value="<?= (isset($room)) ? htmlspecialchars($room['price_perday'])  : "" ?>">
+        </div>
+        <div>
+            <label for="tax">Tax</label>
+            <input type="text" id="inputtext" name="tax" placeholder="Tax"
+                value="<?= (isset($room)) ? htmlspecialchars($room['tax'])  : "" ?>">
+        </div>
+        <div>
+            <label for="descriptions">Descriptions</label>
+            <textarea name="descriptions" value="" rows="10"
+                cols="30"><?= (isset($room)) ? htmlspecialchars($room['descriptions'])  : "" ?></textarea>
+        </div>
+        <?php if(isset($room)): ?>
+        <div>
+            <div>Room Photo</div>
+            <img src="<?=htmlspecialchars($room['src'])?>" alt="logo">
+        </div>
+        <?php endif; ?>
+        <div>
+            <label for="image"><?= (isset($room))?'Modifiy':'Add' ?> photo</label>
+            <input type="file" id="" name="image" placeholder="image" value="">
+        </div>
+        <div>
+            <button class="button" type="submit" name="submit-room">Valider</button>
+
+        </div>
+    </form>
+
+
+
+</article>

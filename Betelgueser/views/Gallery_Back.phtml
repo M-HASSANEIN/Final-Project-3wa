@@ -1,0 +1,60 @@
+<article class="gallery">
+
+    <h1>GALLERY</h1>
+    <div>
+        <a class="back" href="albumsback"> Back to Albums</a>
+    </div>
+
+    <h3>ADD-PHOTOS-TO-ALBUM</h3>
+    <div class="upload">
+        <form action=" index.php?page=UpLoadGalleryBack" method="post" enctype="multipart/form-data">
+            <div class="form">
+                <div class="btnload">
+                    <input type="button" class="uploadButton" value="Browse" />
+                    <input type="file" name="images[]" multiple id="fileUpload" />
+                    <span class="fileName">Select photos..</span>
+                </div>
+                <label for="alt" class="">
+                    <!-- Entre Name -->
+                    <input type="hidden" name="alt">
+                </label>
+                <input type="hidden" name="name" value="<?= htmlspecialchars($_SESSION["name"]) ?>">
+                <input type="hidden" name="id" value="<?=  htmlspecialchars($_SESSION["id_album"])  ?>">
+                <button class="button" type="submit" name="submit-photo"> Upload</button>
+                <p>
+                    <?php if (isset($errors)) : ?><?= $errors ?>
+                    <?php else :?><?="" ?>
+                    <?php endif?>
+                    <?php if (isset($success)) : ?><?= $success ?>
+                    <?php else :?><?="" ?>
+                    <?php endif?>
+                </p>
+            </div>
+        </form>
+    </div>
+
+    <ul>
+        <?php foreach ($photos as $photo): ?>
+        <?php if (htmlspecialchars($photo['id_album'])== htmlspecialchars($_SESSION["id_album"])) :?>
+        <li>
+            <div class="dropdown">
+                <button class="dropbtn">ACTION</button>
+                <div class="dropdown-content">
+                    <a class="delete"
+                        href="index.php?page=deletePhoto&PHOTO=<?=htmlspecialchars($photo['id_gallery'])?>&IMAGE=<?=htmlspecialchars($photo['src'])?>">
+                        <i class="fas fa-trash-alt"></i> DELETE</a>
+                    <a href="index.php?page=ModifyPhoto&PHOTO=<?=htmlspecialchars($photo['id_gallery'])?>&NAME=<?=htmlspecialchars($photo['src'])?>"
+                        class="modify">
+                        <i class="fas fa-pencil-alt"></i> EDIT</a>
+                </div>
+            </div>
+            <img class="images" src="<?=htmlspecialchars($photo['src'])?>" alt="<?=htmlspecialchars($photo['alt'])?>">
+        </li>
+        <?php endif;?>
+        <?php endforeach ;?>
+    </ul>
+
+
+
+
+</article>

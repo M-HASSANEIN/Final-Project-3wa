@@ -1,0 +1,22 @@
+<article class="about">
+    <h1>About us</h1>
+    <section>
+        <h2> <?=htmlspecialchars($this->boat["boat_name"])?></h2>
+
+        <img class="BET1" src="<?=htmlspecialchars($this->abouts[0]["about_img"])?>"
+            alt="<?=htmlspecialchars($this->abouts[0]["about_img_alt"])?>">
+        <div>
+            <?=html_entity_decode($this->abouts[0]["about_content"])?>
+        </div>
+    </section>
+
+    <section>
+        <h2><?=htmlspecialchars($this->boat["boat_name"])?></h2>
+        <img class="BET2" src="<?=htmlspecialchars($this->abouts[1]["about_img"])?>"
+            alt="<?=htmlspecialchars($this->abouts[1]["about_img_alt"])?>">
+        <div>
+            <?=html_entity_decode($this->abouts[1]["about_content"])?>
+        </div>
+    </section>
+
+</article>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/diving-logo.png" type="image/x-icon">
+    <!-- CSS Perso -->
+    <link rel="stylesheet" href="assets/CSS/normalize.css">
+    <link rel="stylesheet" href="assets/CSS/style.css">
+    <link rel="stylesheet" href="assets/font/Rimouski.css">
+    <!-- CSS Ext -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- title page php -->
+    <title><?php if (isset($title)) : ?><?= $title ?>
+        <?php else :?><?="monsite" ?>
+        <?php endif?>
+    </title>
+</head>
+
+<body>
+    <!--waves -->
+    <div class="wave-light"></div>
+    <div class="wave">
+        <img src="assets/img/wave.svg" alt="wave">
+    </div>
+    <!--end  waves -->
+
+    <!-- cookie-->
+    <?php if(!isset($_COOKIE['betelguser'])): ?>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="cookies">
+            <span class="cookies-message">We use cookies on this website, to ensure optimal experience while viewing our
+                site.</span>
+            <button class="cookies-accept">ACCEPT</button>
+        </div>
+        <?php endif; ?>
+        <!--end  cookie -->
+    </div>
+    <!--HEADER-->
+    <header>
+        <div class="wrapper">
+            <div class="navbar">
+                <div class="logo">
+                    <img src="<?= htmlspecialchars($this->boat['logo']) ?>" alt="logo">
+                    <strong><?= htmlspecialchars($this->boat['boat_name']) ?></strong>
+                </div>
+                <div class="ss">
+                    <?php if(!isset($_SESSION['customer'])): ?>
+                    <div class="signin">
+                        <a href="LogInUser"> LOG IN</a>
+                        <a href="Register"> register</a>
+                    </div>
+                    <?php else: ?>
+                    <div class="session">
+                        <p>Welcome<span> <?=$_SESSION['customer']?></span> </p>
+                        <div class="dropdown">
+                            <a class="dropbtn" href="logoutuser">Sign out <i
+                                    class="fas fa-caret-down"></i> </a>
+                            <div class="dropdown-content">
+                                <a href="changepassword"> Change PWD</a>
+                                <a href="mybooking">My booking</a>
+                                <!-- <a href="#">Link 3</a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <nav>
+                <a href="home">HOME</a>
+                <a href="albums">GALLERY</a>
+                <a href="diving">DIVING</a>
+                <a href="rooms">ROOMS</a>
+                <a href="about">ABOUT</a>
+            </nav>
+        </div>
+    </header>
+    <!--MAIN CONTENT-->
+    <main class="wrapper">
+        <?php include $template;  ?>
+    </main>
+    <!--FOOTER-->
+    <footer>
+        <section>
+            <aside>
+                <h3>Follow Us</h3>
+                <div class="social">
+                    <div><a href=""><i class="fab fa-facebook-square"></i></a></div>
+                    <div><a href=""><i class="fab fa-instagram"></i></a></div>
+                    <div><a href=""><i class="fab fa-youtube"></i></a></div>
+                </div>
+            </aside>
+            <aside>
+                <h3>HURGADA WEATHER</h3>
+                <div class="weatherGadget">
+                    <div class="Gadget">
+                        <div class="weather-icon"><img class="img" src="assets/icons/unknown.png" alt="Weather icon">
+                        </div>
+                        <div class="dis"></div>
+                    </div>
+                    <div class="tmp">
+                        <div>Air Temp : <span id="temp"></span><span>°C</span></div>
+                        <div>Water Temp : <span id="Water"> </span> <span>°C</span></div>
+                        <div>Humidity : <span id="Humidity"> </span> <span>%</span></div>
+                        <p><a href="https://openweathermap.org/city/361291">Openweathermap</a> </p>
+                        <p><a href="http://www.sea-temperature.com/water/hurghada/585">Sea-temperature</a> </p>
+                    </div>
+                </div>
+            </aside>
+            <aside>
+                <h3>Join our newsletter</h3>
+                <div class="error"> <?php if (isset($errornew)) : ?> <?=$errornew ;?>
+                    <?php  else : ?> <?=""?>
+                    <?php  endif ?>
+                </div>
+                <form action="newletter" method="POST">
+                    <div>
+                        <input type="text" name="name" placeholder="Name" required>
+                    </div>
+                    <div>
+                        <input type="text" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="submit">
+                        <div>
+                            <input type="submit" name="submit" value="JOIN">
+                        </div>
+                        <div>
+                            <input class="stop" type="submit" name="stop" value="STOP">
+                        </div>
+                    </div>
+                </form>
+            </aside>
+            <aside>
+                <h3>contact us !</h3>
+                <div class="contact">
+                    <h4><i class="fas fa-home"></i><?= htmlspecialchars($this->boat['company_name']) ?></h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i><?= htmlspecialchars($this->boat['address']) ?></li>
+                        <li><i class="fas fa-phone"></i><?= htmlspecialchars($this->boat['company_phone']) ?></li>
+                        <li><i class="fas fa-at"></i><?= htmlspecialchars($this->boat['info_email']) ?></li>
+                    </ul>
+                </div>
+            </aside>
+        </section>
+    </footer>
+    <!-- Perso JS -->
+    <script type="text/javascript" src="assets/js/scriptweather.js"></script>
+    <script type="text/javascript" src="assets/js/cookies_script.js"></script>
+</body>
+
+</html>

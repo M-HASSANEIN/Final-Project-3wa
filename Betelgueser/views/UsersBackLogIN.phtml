@@ -1,0 +1,17 @@
+<article class="admin">
+
+    <img class="logo" src="<?=htmlspecialchars($this->boat['logo'])?>" alt="logo">
+
+    <form action="connectback" method="post">
+
+        <label for="user">Username</label>
+        <input type="text" id="inputtext" name="user" placeholder="username" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="inputPassword" name="password" placeholder="Password" required>
+
+        <button class="button" type="submit">Sign in</button>
+    </form>
+
+
+</article>

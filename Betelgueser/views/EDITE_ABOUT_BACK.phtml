@@ -1,0 +1,43 @@
+<article class="addphoto">
+
+    <h1>EDIT-ABOUT-CONTENT </h1>
+    <div class=" buttonadd">
+        <a href="aboutback"> Cancel</a>
+    </div>
+    <p>
+        <?php if (isset($errors)) : ?><?= $errors ?>
+        <?php else :?><?="" ?>
+        <?php endif?>
+        <?php if (isset($success)) : ?><?= $success ?>
+        <?php else :?><?="" ?>
+        <?php endif?>
+    </p>
+    <form
+        action="index.php?page=ModifyAbout&ABOUT=<?=htmlspecialchars($about['id_about'])."&SRC=".htmlspecialchars($about['about_img']) ?>"
+        method="post" enctype="multipart/form-data">
+        <div>
+            <img src="<?=htmlspecialchars($about['about_img'])?>" alt="<?=htmlspecialchars($about['about_img_alt'])?>">
+        </div>
+
+
+        <div>
+            <label for="image">Change photo</label>
+            <input type="file" id="" name="image" placeholder="image" value="">
+        </div>
+        <div>
+            <label for="about_img_alt">PhotoName</label>
+            <input type="text" id="" name="about_img_alt" placeholder="PhotoName"
+                value="<?= (isset($about)) ? htmlspecialchars($about['about_img_alt'])  : "" ?>">
+        </div>
+        <div>
+            <label for="about_content">Paragraphe</label>
+            <textarea name="about_content" value="" rows="10"
+                cols="30"><?= (isset($about)) ? htmlspecialchars($about['about_content'])  : "" ?></textarea>
+        </div>
+        <div>
+            <button class="button" type="submit" name="submit-about">Valider</button>
+
+        </div>
+    </form>
+
+</article>

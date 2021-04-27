@@ -1,0 +1,133 @@
+<article class="home">
+
+    <section>
+        <div class="slider">
+            <div class="slider-items">
+                <div class="item active">
+                    <img src="<?=htmlspecialchars($this->sitephotos[0]["src"])?>"
+                        alt="<?=htmlspecialchars($this->sitephotos[0]["alt"])?>">
+                    <h2><?= (isset($this->boat)) ? htmlspecialchars($this->boat["boat_name"])  : "" ?></h2>
+                </div>
+                <div class="item">
+                    <img src="<?=htmlspecialchars($this->sitephotos[1]["src"])?>"
+                        alt="<?=htmlspecialchars($this->sitephotos[1]["alt"])?>">
+                    <h2><?= (isset($this->boat)) ? htmlspecialchars($this->boat["boat_name"])  : "" ?></h2>
+                </div>
+                <div class="item">
+                    <img src="<?=htmlspecialchars($this->sitephotos[2]["src"])?>"
+                        alt="<?=htmlspecialchars($this->sitephotos[2]["alt"])?>">
+                    <h2><?= (isset($this->boat)) ? htmlspecialchars($this->boat["boat_name"])  : "" ?></h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="boat">
+        <h1> Our Boat</h1>
+        <img class="bet1" src="<?=htmlspecialchars($this->abouts[2]["about_img"])?>"
+            alt="<?=htmlspecialchars($this->abouts[2]["about_img_alt"])?>">
+        <div>
+            <?=html_entity_decode($this->abouts[2]["about_content"])?>
+        </div>
+    </section>
+
+    <section class="boat">
+        <img class="bet2" src="<?=htmlspecialchars($this->abouts[3]["about_img"])?>"
+            alt="<?=htmlspecialchars($this->abouts[3]["about_img_alt"])?>">
+        <div>
+            <?=html_entity_decode($this->abouts[3]["about_content"])?>
+        </div>
+    </section>
+
+    <section class="photos">
+        <div class="container">
+            <div class="box">
+                <div class="imgBx">
+                    <img src="<?=htmlspecialchars($this->sitephotos[3]["src"])?>"
+                        alt="<?=htmlspecialchars($this->sitephotos[0]["alt"])?>">
+                </div>
+                <div class="content">
+                    <div>
+                        <h2><?= (isset($this->boat)) ? htmlspecialchars($this->boat["boat_name"])  : "" ?></h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, voluptatem earum expedita
+                            quidem
+                            vero. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="<?=htmlspecialchars($this->sitephotos[4]["src"])?>"
+                        alt="<?=htmlspecialchars($this->sitephotos[0]["alt"])?>">
+                </div>
+                <div class="content">
+                    <div>
+                        <h2><?= (isset($this->boat)) ? htmlspecialchars($this->boat["boat_name"])  : "" ?></h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, voluptatem earum expedita
+                            quidem
+                            vero. </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="imgBx">
+                    <img src="<?=htmlspecialchars($this->sitephotos[5]["src"])?>"
+                        alt="<?=htmlspecialchars($this->sitephotos[0]["alt"])?>">
+                </div>
+                <div class="content">
+                    <div>
+                        <h2><?= (isset($this->boat)) ? htmlspecialchars($this->boat["boat_name"])  : "" ?></h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, voluptatem earum expedita
+                            quidem
+                            vero. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="<?=htmlspecialchars($this->sitephotos[6]["src"])?>"
+                        alt="<?=htmlspecialchars($this->sitephotos[0]["alt"])?>">
+                </div>
+                <div class="content">
+                    <div>
+                        <h2><?= (isset($this->boat)) ? htmlspecialchars($this->boat["boat_name"])  : "" ?></h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, voluptatem earum expedita
+                            quidem
+                            vero. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="<?=htmlspecialchars($this->sitephotos[7]["src"])?>"
+                        alt="<?=htmlspecialchars($this->sitephotos[0]["alt"])?>">
+                </div>
+                <div class="content">
+                    <div>
+                        <h2><?= (isset($this->boat)) ? htmlspecialchars($this->boat["boat_name"])  : "" ?></h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, voluptatem earum expedita
+                            quidem
+                            vero. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="<?=htmlspecialchars($this->sitephotos[8]["src"])?>"
+                        alt="<?=htmlspecialchars($this->sitephotos[0]["alt"])?>">
+                </div>
+                <div class="content">
+                    <div>
+                        <h2><?= (isset($this->boat)) ? htmlspecialchars($this->boat["boat_name"])  : "" ?></h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos, voluptatem earum expedita
+                            quidem
+                            vero. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="assets/js/Home_Slider.js"></script>
+</article>

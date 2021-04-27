@@ -1,0 +1,66 @@
+<article class="rooms">
+    <h1>ROOMS</h1>
+    <p class="note">
+        <?php if (isset($errors)) : ?><?= $errors ?>
+        <?php else :?><?="" ?>
+        <?php endif?>
+        <?php if (isset($success)) : ?><?= $success ?>
+        <?php else :?><?="" ?>
+        <?php endif?>
+    </p>
+    <section>
+        <div class="info">
+            <article>
+                <h3><?= htmlspecialchars($this->rooms[1]['room_name']) ?></h3>
+                <img class="big" src="<?=htmlspecialchars($this->photos[2]['src'])?>"
+                    alt="<?=htmlspecialchars($this->photos[2]['alt'])?>">
+                <p><?= htmlspecialchars($this->rooms[1]['descriptions']) ?></p>
+                <p>Price per day</p>
+                <p> <?= htmlspecialchars($this->rooms[1]['price_perday']) ?> €</p>
+                <?php if(isset($_SESSION['customer'])): ?>
+                <a href="booking-room-<?= htmlspecialchars($this->rooms[1]['id_room']) ?>">
+                    BOOK IT </a>
+                <?php endif; ?>
+            </article>
+
+            <article>
+                <h3><?= htmlspecialchars($this->rooms[8]['room_name']) ?></h3>
+                <img class="big" src="<?=htmlspecialchars($this->photos[2]['src'])?>"
+                    alt="<?=htmlspecialchars($this->photos[2]['alt'])?>">
+                <p><?= htmlspecialchars($this->rooms[8]['descriptions']) ?></p>
+                <p>Price per day</p>
+                <p> <?= htmlspecialchars($this->rooms[8]['price_perday']) ?> €</p>
+                <?php if(isset($_SESSION['customer'])): ?>
+                <a href="booking-room-<?= htmlspecialchars($this->rooms[8]['id_room']) ?>">
+                    BOOK IT </a>
+                <?php endif; ?>
+            </article>
+
+            <article>
+                <h3><?= htmlspecialchars($this->rooms[4]['room_name']) ?></h3>
+                <img class="big" src="<?=htmlspecialchars($this->photos[1]['src'])?>"
+                    alt="<?=htmlspecialchars($this->photos[1]['alt'])?>">
+                <p><?= htmlspecialchars($this->rooms[4]['descriptions']) ?></p>
+                <p>Price per day</p>
+                <p> <?= htmlspecialchars($this->rooms[4]['price_perday']) ?> €</p>
+                <?php if(isset($_SESSION['customer'])): ?>
+                <a href="booking-room-<?= htmlspecialchars($this->rooms[4]['id_room']) ?>">
+                    BOOK IT </a>
+                <?php endif; ?>
+            </article>
+
+            <article>
+                <h3><?= htmlspecialchars($this->rooms[12]['room_name']) ?></h3>
+                <img class="big" src="<?=htmlspecialchars($this->photos[0]['src'])?>"
+                    alt="<?=htmlspecialchars($this->photos[0]['alt'])?>">
+                <p><?= htmlspecialchars($this->rooms[12]['descriptions']) ?></p>
+                <p>Price per day</p>
+                <p> <?= htmlspecialchars($this->rooms[12]['price_perday']) ?> €</p>
+                <?php if(isset($_SESSION['customer'])): ?>
+                <a href="booking-room-<?= htmlspecialchars($this->rooms[12]['id_room']) ?>">
+                    BOOK IT </a>
+                <?php endif; ?>
+            </article>
+        </div>
+    </section>
+</article>

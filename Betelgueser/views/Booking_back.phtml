@@ -1,0 +1,54 @@
+<div class="booking">
+
+    <h1>BOOKING</h1>
+    <div class=" buttonadd">
+        <a href="AddBookingBack"> <i class="fas fa-plus"></i> Add BOOKING</a>
+    </div>
+    <p>
+        <?php if (isset($_GET["error"])): ?><?=$_GET["error"]?>
+        <?php else: ?><?=""?>
+        <?php endif?>
+        <?php if (isset($success)): ?><?=$success?>
+        <?php else: ?><?=""?>
+        <?php endif?>
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">ID BOOKING</th>
+                <th class="customer" scope="col"> CUSTOMER</th>
+                <th scope="col">COMMENTS</th>
+                <th scope="col">DATE & TIME</th>
+                <th scope="col">CHECK IN </th>
+                <th scope="col">CHECK OUT</th>
+                <th scope="col">PERIOD OF STAY </th>
+                <th scope="col"> ROOM </th>
+                <th scope="col">TOTAL AMOUNT </th>
+                <th scope="col" colspan="2">ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($this->bookings as $booking): ?>
+            <tr>
+                <td data-label="ID BOOKING"><?=htmlspecialchars($booking['id_booking'])?></td>
+                <td data-label="CUSTOMER"><?=htmlspecialchars($booking['email'])?></td>
+                <td data-label="COMMENTS"><?=htmlspecialchars($booking['comments'])?></td>
+                <td data-label="DATE & TIME"><?=htmlspecialchars($booking['date'])?></td>
+                <td data-label="CHECK IN"><?=htmlspecialchars($booking['from_date'])?></td>
+                <td data-label="CHECK OUT"><?=htmlspecialchars($booking['to_date'])?></td>
+                <td data-label="PERIOD OF STAY"><?=htmlspecialchars($booking['period_of_stay'])?> days</td>
+                <td data-label="ROOM"><?=htmlspecialchars($booking['room_name'])?></td>
+                <td data-label="TOTAL AMOUNT"><?=htmlspecialchars($booking['total_amount'])?> €</td>
+                <td data-label="ACTION"><a class="delete button"
+                        href="DeleteBookingBack-Book-<?=htmlspecialchars($booking['id_booking'])?>">
+                        <i class="fas fa-trash-alt"></i> DELETE</a></td>
+                <td data-label="ACTION"><a
+                        href="EditBookingBack-Book-<?=htmlspecialchars($booking['id_booking'])?>"
+                        class="modify button"> <i class="fas fa-pencil-alt"></i> EDIT</a></td>
+            </tr>
+            <?php endforeach?>
+        </tbody>
+    </table>
+
+</div>

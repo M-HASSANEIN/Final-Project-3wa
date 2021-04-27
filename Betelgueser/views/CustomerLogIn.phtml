@@ -1,0 +1,31 @@
+<article class="login">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <h2 class="active"> LOG IN </h2>
+            <div class="error"> <?php if (isset($error)) : ?> <?=$error ;?>
+                <?php  else : ?> <?=""?>
+                <?php  endif ?>
+            </div>
+            <!-- Icon -->
+            <div class="fadeIn first">
+                <img id="icon" src="<?=htmlspecialchars($this->boat['logo'])?>" alt="logo">
+            </div>
+
+            <!-- Login Form -->
+            <form action="connect" method="post">
+                <label for="userid"></label>
+                <input type="text" id="userid" class="fadeIn second" name="userid" placeholder="Username Or Email">
+                <label for="password"></label>
+                <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password">
+                <input type="submit" name="submit" class="fadeIn fourth" value="Log In">
+            </form>
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="ForgotPassword">Forgot Password?</a>
+            </div>
+
+        </div>
+    </div>
+</article>

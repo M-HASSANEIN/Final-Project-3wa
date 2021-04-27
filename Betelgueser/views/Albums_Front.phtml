@@ -1,0 +1,36 @@
+<article class="albums">
+    <h1>ALBUMS</h1>
+    <?php if(isset($_SESSION['customer'])): ?>
+    <div class="add">
+        <a class="button" href="Addalbums"> Add New Album</a>
+    </div>
+    <?php endif; ?>
+    <p>
+        <?php if (isset($_GET["error"])) : ?><?=$_GET["error"] ?>
+        <?php else :?><?="" ?>
+        <?php endif?>
+        <?php if (isset($success)) : ?><?= $success ?>
+        <?php else :?><?="" ?>
+        <?php endif?>
+    </p>
+
+
+
+    <div>
+        <ul>
+            <?php foreach ($this->albums as $album): ?>
+            <li>
+                <a href="Gallery-id-<?=htmlspecialchars($album['id_album'])?>">
+                    <figure class="add-albums">
+                        <img src="<?=htmlspecialchars($album['image'])?>" alt="<?=htmlspecialchars($album['name'])?>">
+                        <figcaption>
+                            <span><?=htmlspecialchars($album['name'])?></span>
+                        </figcaption>
+                    </figure>
+                </a>
+            </li>
+            <?php endforeach ;?>
+        </ul>
+    </div>
+
+</article>

@@ -1,0 +1,53 @@
+<article class="gallery">
+
+    <h1>GALLERY</h1>
+    <div>
+        <a class="back" href="albums"> Back to Albums</a>
+    </div>
+    <ul>
+        <?php foreach ($photos as $photo): ?>
+        <?php if (htmlspecialchars($photo['id_album'])== htmlspecialchars($_SESSION["id_album"])) :?>
+        <li><img class="images" src="<?=htmlspecialchars($photo['src'])?>" alt="<?=htmlspecialchars($photo['alt'])?>">
+        </li>
+        <?php endif;?>
+        <?php endforeach ;?>
+    </ul>
+    <?php if(isset($_SESSION['customer'])): ?>
+    <h3>SHARE YOUR EXPERIENCE</h3>
+    <div class="upload">
+        <form action="UploadGallery" method="post" enctype="multipart/form-data">
+            <div class="form">
+                <div class="btnload">
+                    <input type="button" class="uploadButton" value="Browse" />
+                    <input type="file" name="images[]" multiple id="fileUpload" />
+                    <span class="fileName">Select photos..</span>
+                </div>
+
+                <!-- Entre Name -->
+                <input type="hidden" name="alt">
+                <input type="hidden" name="name" value="<?= htmlspecialchars($_SESSION["name"]) ?>">
+                <input type="hidden" name="id" value="<?=  htmlspecialchars($_SESSION["id_album"])  ?>">
+                <button type="submit" name="submit-photo"> Upload</button>
+                <p>
+                    <?php if (isset($errors)) : ?><?= $errors ?>
+                    <?php else :?><?="" ?>
+                    <?php endif?>
+                    <?php if (isset($success)) : ?><?= $success ?>
+                    <?php else :?><?="" ?>
+                    <?php endif?>
+                </p>
+            </div>
+        </form>
+    </div>
+    <?php endif; ?>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close"><i class="fas fa-times"></i></span>
+        <img class="modal-content" id="img01">
+        <a class="next"><i class="fas fa-chevron-right"></i></a>
+        <a class="prev"><i class="fas fa-chevron-left"></i></a>
+    </div>
+    <!-- script perso -->
+    <script type="text/javascript" src="assets/js/Gallery_Slider.js"></script>
+
+</article>

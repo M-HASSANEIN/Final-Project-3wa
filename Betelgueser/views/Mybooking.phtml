@@ -1,0 +1,35 @@
+<article class="mybooking">
+    <h1>Mybooking</h1>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">REF BOOKING</th>
+                <th class="customer" scope="col"> EMAIL</th>
+                <th scope="col">COMMENTS</th>
+                <th scope="col">DATE & TIME</th>
+                <th scope="col">CHECK IN </th>
+                <th scope="col">CHECK OUT</th>
+                <th scope="col">PERIOD OF STAY </th>
+                <th scope="col"> ROOM </th>
+                <th scope="col">TOTAL AMOUNT </th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach($this->bookings as $booking): ?>
+             <?php if (htmlspecialchars($booking['email'])== htmlspecialchars($_SESSION["email"])) :?>
+            <tr>
+                <td data-label="ID BOOKING"><?=htmlspecialchars($booking['id_booking'])?></td>
+                <td data-label="CUSTOMER"><?=htmlspecialchars($booking['email'])?></td>
+                <td data-label="COMMENTS"><?=htmlspecialchars($booking['comments'])?></td>
+                <td data-label="DATE & TIME"><?=htmlspecialchars($booking['date'])?></td>
+                <td data-label="CHECK IN"><?=htmlspecialchars($booking['from_date'])?></td>
+                <td data-label="CHECK OUT"><?=htmlspecialchars($booking['to_date'])?></td>
+                <td data-label="PERIOD OF STAY"><?=htmlspecialchars($booking['period_of_stay'])?> days</td>
+                <td data-label="ROOM"><?=htmlspecialchars($booking['room_name'])?></td>
+                <td data-label="TOTAL AMOUNT"><?=htmlspecialchars($booking['total_amount'])?> €</td>
+            </tr>
+            <?php endif;?>
+            <?php endforeach ?>
+        </tbody>
+    </table>
+</article>

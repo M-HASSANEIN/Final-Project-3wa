@@ -1,0 +1,62 @@
+<article class="addroom">
+
+    <h1>Site-Setting</h1>
+
+    <p>
+        <?php if (isset($_GET["error"])) : ?><?=$_GET["error"] ?>
+        <?php else :?><?="" ?>
+        <?php endif?>
+    </p>
+    <form action=" index.php?page=ModifyBoatInfo" method="post" enctype="multipart/form-data">
+
+        <div>
+            <!--  send id boat -->
+            <input type="hidden" name="id-boat"
+                value="<?= (isset($this->boat)) ? htmlspecialchars($this->boat["id_boat"])  : "" ?>">
+            <!--  send image name boat   -->
+            <input type="hidden" name="image"
+                value="<?= (isset($this->boat)) ? htmlspecialchars($this->boat['logo'])  : "" ?>">
+
+
+            <label for="name">Boat Name</label>
+            <input type="text" id="inputtext" name="name" placeholder="name"
+                value="<?= (isset($this->boat)) ? htmlspecialchars($this->boat["boat_name"])  : "" ?>">
+
+        </div>
+        <div>
+            <label for="email">Info Email</label>
+            <input type="text" id="inputtext" name="email" placeholder="email"
+                value="<?= (isset($this->boat)) ? htmlspecialchars($this->boat['info_email'])  : "" ?>">
+        </div>
+        <div>
+            <label for="phone">Boat Contact</label>
+            <input type="text" id="inputtext" name="phone" placeholder="phone"
+                value="<?= (isset($this->boat)) ? htmlspecialchars($this->boat['company_phone'])  : "" ?>">
+        </div>
+        <div>
+            <label for="company_name">Place</label>
+            <input type="text" id="inputtext" name="company_name" placeholder="company_name"
+                value="<?= (isset($this->boat)) ? htmlspecialchars($this->boat['company_name'])  : "" ?>">
+        </div>
+        <div>
+            <label for="address">Address</label>
+            <input type="text" id="inputtext" name="address" placeholder="address"
+                value="<?= (isset($this->boat)) ? htmlspecialchars($this->boat['address'])  : "" ?>">
+        </div>
+        <div>
+            <div>Logo</div>
+            <img class="logoboat" src="<?=htmlspecialchars($this->boat['logo'])?>" alt="logo">
+        </div>
+        <div>
+            <label for="image">Change Logo</label>
+            <input type="file" id="" name="image" placeholder="image" value="">
+        </div>
+        <div>
+            <button class="button" type="submit" name="submit-info">Valider</button>
+
+        </div>
+    </form>
+
+
+
+</article>

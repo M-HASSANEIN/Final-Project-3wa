@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=" backend website betelgueser">
+    <meta name="generator" content="Hugo 0.79.0">
+    <!-- Custom styles for this website -->
+    <link rel="stylesheet" href="assets/CSS/normalize.css">
+    <link rel="shortcut icon" href="<?=htmlspecialchars($this->boat['logo'])?>" type="image/x-icon">
+    <!-- CSS Perso -->
+    <link rel="stylesheet" href="assets/CSS/style_backend.css">
+    <!-- CSS Ext -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Economica:wght@700&display=swap" rel="stylesheet">
+    <!-- title page php -->
+    <title> <?php if (isset($title)) : ?> <?=$title ;?>
+        <?php  else : ?> <?="Main Page"?>
+        <?php  endif ?>
+    </title>
+</head>
+
+<body>
+    <!--HEADER-->
+    <header>
+        <a class="" href="#">
+            <img class="logo" src="<?=htmlspecialchars($this->boat['logo'])?>"
+                alt="logo"><strong><?= (isset($this->boat)) ? htmlspecialchars($this->boat["boat_name"])  : "" ?></strong>
+        </a>
+        <?php if(isset($_SESSION['user'])): ?>
+        <div class="avalogo">
+            <a class="logout" href="logout">Sign out</a>
+            <p>Welcome<span> <?=$_SESSION['user']?></span></p>
+        </div>
+        <?php endif; ?>
+
+    </header>
+    <?php if(isset($_SESSION['user'])): ?>
+    <div class="flexmod">
+        <nav class="layout">
+            <ul>
+                <li><i class="fas fa-home"> </i> HOME
+                    <a href="dashboard">
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="home">
+                        <span>Return to Site</span>
+                    </a>
+                </li>
+                <li><i class="fas fa-globe-americas"></i> Web site
+                    <a href="aboutback">
+                        <span> About Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="sitephotoback">
+                        <span>Site Photos Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="albumsback">
+                        <span>Galleries Management</span>
+                    </a>
+                </li>
+                <li><i class="fas fa-hotel"></i> Booking
+                    <a href="bookingback">
+                        <span> Booking Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="RoomsBack">
+                        <span> Rooms Management</span>
+                    </a>
+                </li>
+                <!--ADMIN ONLY-->
+                <?php if($_SESSION['user']=="admin"): ?>
+                <li> <i class="fas fa-cogs"> </i> Settings
+                    <a href="CustomersBack">
+                        <span> Customers Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="UserBack">
+                        <span> Users Management</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="SiteSetting">
+                        <span>Site setting</span>
+                    </a>
+                </li>
+                <?php endif; ?>
+                <!--ADMIN ONLY-->
+            </ul>
+        </nav>
+
+        <?php endif; ?>
+        <!--MAIN CONTENT-->
+        <main>
+            <?php include $template; ?>
+        </main>
+    </div>
+    <script src="assets/js/backend_script.js"></script>
+</body>
+
+</html>

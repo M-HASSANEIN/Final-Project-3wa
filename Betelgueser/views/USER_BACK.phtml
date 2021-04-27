@@ -1,0 +1,46 @@
+<div class="rooms">
+
+    <h1>USERS</h1>
+    <div class=" buttonadd">
+        <a href="index.php?page=ADD-USER-BACK"> <i class="fas fa-plus"></i> Add User</a>
+    </div>
+    <p>
+        <?php if (isset($_GET["error"])) : ?><?=$_GET["error"] ?>
+        <?php else :?><?="" ?>
+        <?php endif?>
+    </p>
+    <div class="over">
+        <table>
+
+            <thead>
+                <tr>
+                    <th>ID USER</th>
+                    <th> ROLE</th>
+                    <th>USER-NAME</th>
+                    <th>FIRST-NAME</th>
+                    <th>LAST NAME </th>
+                    <th>EMAIL </th>
+                    <th colspan="2">ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($this->users as $user): ?>
+                <tr>
+                    <td data-label="ID USER"><?=htmlspecialchars($user['id_user'])?></td>
+                    <td data-label="ROLE"><?=htmlspecialchars($user['role'])?></td>
+                    <td data-label="USER-NAME"><?=htmlspecialchars($user['user_name'])?></td>
+                    <td data-label="FIRST-NAME"><?=htmlspecialchars($user['firstname'])?></td>
+                    <td data-label="LAST NAME"><?=htmlspecialchars($user['lastname'])?></td>
+                    <td data-label="EMAIL"><?=htmlspecialchars($user['email'])?></td>
+                    <td data-label="ACTION"><a class="delete button"
+                            href="index.php?page=DELETEUSER-BACK&USER=<?= htmlspecialchars($user['id_user']) ?>">
+                            <i class="fas fa-trash-alt"></i> DELETE</a></td>
+                    <td data-label="ACTION"><a
+                            href="index.php?page=EDITUSER-PAGE&USER=<?= htmlspecialchars($user['id_user']) ?>"
+                            class="modify button"> <i class="fas fa-pencil-alt"></i> EDIT</a></td>
+                </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+    </div>
+</div>

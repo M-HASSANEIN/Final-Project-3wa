@@ -1,0 +1,42 @@
+<article class="booking">
+
+
+    <form action="EditBookingInfo-booking-<?= htmlspecialchars($booking['id_booking']) ?>" method="post">
+        <h1><?= htmlspecialchars($room["room_name"]) ?></h1>
+
+        <img class="big" src="<?=htmlspecialchars($room['src'])?>" alt="<?=htmlspecialchars($room['alt'])?>">
+
+        <p><?= htmlspecialchars($room['descriptions']) ?></p>
+
+        <p>Price per day</p>
+
+        <p> <?= htmlspecialchars($room['price_perday']) ?> €</p>
+        <input type="hidden" id="" name="price" placeholder=""
+            value="<?=(isset($room['price_perday'])) ? htmlspecialchars($room['price_perday'])  : ""?>" required>
+        <div>
+            <label for="email ">Customer Email</label>
+            <input type="text" id="" name="email" placeholder=""
+                value="<?=(isset($_SESSION['email'])) ? htmlspecialchars($_SESSION['email'])  : ""?>" required>
+            <input type="hidden" id="" name="id" placeholder=""
+                value="<?=(isset($_SESSION['id_client'])) ? htmlspecialchars($_SESSION['id_client'])  : ""?>" required>
+        </div>
+        <div>
+            <label for="from_date">From</label>
+            <input type="date" id="" name="from_date" placeholder=""
+                value="<?=(isset($booking['from_date'])) ? htmlspecialchars($booking['from_date'])  : ""?>" required>
+            <div>
+                <label for="to_date">To</label>
+                <input type="date" id="" name="to_date" placeholder=""
+                    value="<?=(isset($booking['to_date'])) ? htmlspecialchars($booking['to_date'])  : ""?>" required>
+            </div>
+            <div>
+                <label for="comments">Comments</label>
+                <textarea name="comments" value="" rows="10"
+                    cols="30"><?=(isset($booking['comments'])) ? htmlspecialchars($booking['comments'])  : ""?></textarea>
+            </div>
+            <div class="submit">
+                <button type="submit" name="submit-booking"> EDIT </button>
+                <a href="canceledit-booking-<?= htmlspecialchars($booking['id_booking']) ?>">cancel</a>
+            </div>
+    </form>
+</article>

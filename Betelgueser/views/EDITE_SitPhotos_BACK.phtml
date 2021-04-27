@@ -1,0 +1,36 @@
+<article class="addphoto">
+
+    <h1>EDIT-SITE-PHOTO </h1>
+    <div class=" buttonadd">
+        <a href="sitephotoback"> Cancel</a>
+    </div>
+    <p>
+        <?php if (isset($errors)) : ?><?= $errors ?>
+        <?php else :?><?="" ?>
+        <?php endif?>
+        <?php if (isset($success)) : ?><?= $success ?>
+        <?php else :?><?="" ?>
+        <?php endif?>
+    </p>
+    <form
+        action="index.php?page=MODIFYSITEPHOTO&PHOTO=<?=htmlspecialchars($PHOTO['id_sitephotos'])."&SRC=".htmlspecialchars($PHOTO['src']) ?>"
+        method="post" enctype="multipart/form-data">
+        <div>
+            <img src="<?=htmlspecialchars($PHOTO['src'])?>" alt="<?=htmlspecialchars($PHOTO['alt'])?>">
+        </div>
+
+
+        <div>
+            <label for="image">Change photo</label>
+            <input type="file" id="" name="image" placeholder="image" value="">
+        </div>
+        <div>
+            <label for="alt">PhotoName</label>
+            <input type="text" id="" name="alt" placeholder="PhotoName"
+                value="<?= (isset($PHOTO)) ? htmlspecialchars($PHOTO['alt'])  : "" ?>">
+        </div>
+        <div>
+            <button class="button" type="submit" name="submit-photo">Valider</button>
+    </form>
+
+</article>
