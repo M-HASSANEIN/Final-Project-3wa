@@ -340,10 +340,12 @@ header .ss{
   margin: 5px;
 
 }
+
 .signin a:nth-child(1){
   color: var(--white);
   background-color: var(--gold);
 }
+
 .signin a:nth-child(1):hover{
   color: var(--gold);
   background-color: unset;
