@@ -340,6 +340,14 @@ header .ss{
   margin: 5px;
 
 }
+.signin a:nth-child(1){
+  color: var(--white);
+  background-color: var(--gold);
+}
+.signin a:nth-child(1):hover{
+  color: var(--gold);
+  background-color: unset;
+}
 
 .signin a:hover {
   transform: scale(1.09);
@@ -1904,6 +1912,12 @@ MYBOOKKING
   color: var(--white);
  
 }
+.mybooking .customer {
+  width: 300px;
+}
+
+
+
   /* *****************************************************************
 END-MYBOOKING
 ***************************************************************** */
@@ -1948,7 +1962,10 @@ footer .fa-facebook-square{
 }
 
 footer .fa-instagram  {
-  color:var(--orange);
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   font-size: 4rem;
 }
 
