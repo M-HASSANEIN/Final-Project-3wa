@@ -327,8 +327,8 @@ header .ss{
   justify-content: flex-end;
   text-transform: uppercase;
   font-family: var(--montserrat);
+  margin-right: 10px;
 }
-
 .signin a {
   border: 2px solid var(--gold);
   border-radius: 5px;
@@ -962,10 +962,13 @@ background-color: var(--turquaz);
   margin: 5rem  0rem; 
   min-height: 100vh;
 }
-
+.gallery li{
+  padding: 0;
+  margin: 0;
+}
 .gallery ul img {
   width:340px;
-  height: 320px;
+  height: 340px;
   object-fit: cover;
   overflow: hidden;
   position: relative;
@@ -976,11 +979,12 @@ background-color: var(--turquaz);
 
 .gallery ul {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, auto));
+  grid-template-columns: repeat(auto-fill,340px);
   grid-gap: 10px;
   list-style: none;
   margin: 0px;
   padding: 0px;
+  justify-content: center;
 }
 
 .gallery ul img:hover {
@@ -1115,7 +1119,7 @@ MODEL -GALLERY
   display: block;
   width: 80%;
   max-width: 900px;
-  position: relative;
+  
 }
 
 
@@ -1136,7 +1140,6 @@ MODEL -GALLERY
   to {transform:scale(1)}
 }
 
-/* The Close Button */
 .gallery .close {
   position: absolute;
   top: 15px;
@@ -1153,13 +1156,13 @@ MODEL -GALLERY
   text-decoration: none;
   cursor: pointer;
 }
-
-.gallery .modal img{
+.gallery .imagemodel{
   position: relative;
+  padding: 10px;
 }
-/* Next & previous buttons */
 
-.gallery .next {
+.prev,
+.next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -1172,28 +1175,18 @@ MODEL -GALLERY
   user-select: none;
   -webkit-user-select: none;
   color: var(--gold);
-}
-.gallery .prev{
-  cursor: pointer;
-  position: absolute;
-  left: 10rem;
-  top: 50%;
-  padding: 16px;
-  margin-top: -50px;
-  font-weight: bold;
-  font-size:4rem;
-  user-select: none;
-  -webkit-user-select: none;
-  color: var(--gold);
-}
 
 
-.gallery .next {
-  right: 10rem;
+}
+
+.next {
+  right: 0;
   border-radius: 3px 0 0 3px;
 }
-
-
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
 .gallery .next:hover,
 .gallery .prev:hover
 {
@@ -1299,7 +1292,6 @@ MODEL -GALLERY
   border-radius: 5px;
   float: left;
   filter: drop-shadow(0 0 1rem var(--balckshadow));
-  /* padding-bottom: 100px; */
 }
 
 .rooms h3 {
@@ -2076,7 +2068,7 @@ TAB
    .rooms .info .big {
      padding-bottom: 100px; 
   }
- table {
+  table {
     border: 0;
   }
 
@@ -2206,19 +2198,6 @@ TAB
    {
     margin: 5px 5px 40px 5px;
    }
-   .gallery .next {
-    top: 25%;
-    margin-top: -50px;
-  }
-  .gallery .prev{
-    left: 0rem;
-    top: 25%;
-    padding: 16px;
-    margin-top: -50px; 
-  }
-  .gallery .next {
-    right: 0rem;
-    }
   footer  section {
   flex-wrap: wrap;
   }
@@ -2327,21 +2306,6 @@ MOBILE
    .register {
     margin: 5rem  3rem; 
   }
-  .gallery .next {
-    top: 15%;
-    margin-top: -50px;
-  }
-  .gallery .prev{
-    left: 0rem;
-    top: 15%;
-    padding: 16px;
-    margin-top: -50px; 
-  }
-  .gallery .next {
-    right: 0rem;
-    }
-  
-
 }
 @media only screen and (max-width: 482px) {
   .home .photos .box:hover {
@@ -2367,19 +2331,6 @@ MOBILE
   {
     padding: 10px 20px;
     margin: 20px 10px 20px 10px;
-  }
-  .gallery .next {
-  top: 15%;
-  margin-top: -50px;
-  }
-  .gallery .prev{
-  left: 0rem;
-  top: 15%;
-  padding: 16px;
-  margin-top: -50px; 
-  }
-  .gallery .next {
-  right: 0rem;
   }
   .login input[type="button"], .login input[type="submit"], .login input[type="reset"] {
     padding: 10px 20px;
