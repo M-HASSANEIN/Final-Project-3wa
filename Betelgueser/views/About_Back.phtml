@@ -9,8 +9,7 @@
             <?php foreach ($this->abouts as $about): ?>
             <li>
                 <div class="dropdown">
-                    <a href="index.php?page=EDITE-ABOUT-BACK&ABOUT=<?=htmlspecialchars($about["id_about"])?>"
-                        class="modify">
+                    <a href="editeaboutback-ABOUT-<?=htmlspecialchars($about["id_about"])?>" class="modify">
                         <i class="fas fa-pencil-alt"></i> EDIT</a>
                 </div>
                 <div class="photoabout">

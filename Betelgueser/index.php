@@ -45,7 +45,7 @@ if (!isset($_GET['page'])) {
             $controller = new UserBackController();
             $controller->displayUserBack();
             break;
-        case 'ADD-USER-BACK':
+        case 'AddUserBack':
             $controller = new UserBackController();
             $controller->displayAddUserBack();
             break;
@@ -53,11 +53,11 @@ if (!isset($_GET['page'])) {
             $controller = new UserBackController();
             $controller->AddUserBack();
             break;
-        case 'DELETEUSER-BACK':
+        case 'DELETEUSERBACK':
             $controller = new UserBackController();
             $controller->deleteuser();
             break;
-        case 'EDITUSER-PAGE':
+        case 'EDITUSERPAGE':
             $controller = new UserBackController();
             $controller->EditUserPage();
             break;
@@ -74,7 +74,7 @@ if (!isset($_GET['page'])) {
             $controller = new AboutController();
             $controller->ShowAboutBack();
             break;
-        case 'EDITE-ABOUT-BACK':
+        case 'editeaboutback':
             $controller = new AboutController();
             $controller->ShowEditeAboutBack();
             break;
@@ -87,7 +87,7 @@ if (!isset($_GET['page'])) {
             $controller = new SitePhotosController();
             $controller->displaySitePhotos();
             break;
-        case 'EDIT-SITE-PHOTOS':
+        case 'editsitephotos':
             $controller = new SitePhotosController();
             $controller->ShowEditePhotoPage();
             break;

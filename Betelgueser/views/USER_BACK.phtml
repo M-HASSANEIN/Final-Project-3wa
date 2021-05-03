@@ -2,7 +2,7 @@
 
     <h1>USERS</h1>
     <div class=" buttonadd">
-        <a href="index.php?page=ADD-USER-BACK"> <i class="fas fa-plus"></i> Add User</a>
+        <a href="AddUserBack"> <i class="fas fa-plus"></i> Add User</a>
     </div>
     <p>
         <?php if (isset($_GET["error"])) : ?><?=$_GET["error"] ?>
@@ -33,10 +33,9 @@
                     <td data-label="LAST NAME"><?=htmlspecialchars($user['lastname'])?></td>
                     <td data-label="EMAIL"><?=htmlspecialchars($user['email'])?></td>
                     <td data-label="ACTION"><a class="delete button"
-                            href="index.php?page=DELETEUSER-BACK&USER=<?= htmlspecialchars($user['id_user']) ?>">
+                            href="DELETEUSERBACK-USER-<?= htmlspecialchars($user['id_user']) ?>">
                             <i class="fas fa-trash-alt"></i> DELETE</a></td>
-                    <td data-label="ACTION"><a
-                            href="index.php?page=EDITUSER-PAGE&USER=<?= htmlspecialchars($user['id_user']) ?>"
+                    <td data-label="ACTION"><a href="EDITUSERPAGE-USER-<?= htmlspecialchars($user['id_user']) ?>"
                             class="modify button"> <i class="fas fa-pencil-alt"></i> EDIT</a></td>
                 </tr>
                 <?php endforeach ?>

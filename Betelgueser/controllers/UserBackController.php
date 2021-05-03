@@ -41,32 +41,32 @@ class UserBackController extends SiteBaseController
        if( (empty($user_name) || empty($firstname) || empty($lastname) 
            || empty($pwd)|| empty($repeatpwd) || empty($email))==true )
        {
-        header("location:index.php?page=ADD-USER-BACK&error=You must complete all inputs");
+        header("location:AddUserBack-error-You must complete all inputs");
         exit();
        }
 
           // User match
        if (!preg_match("/^[a-zA-Z0-9]*$/",$user_name)) 
        {
-         header("location:index.php?page=ADD-USER-BACK&error=Invalid Username");
+         header("location:AddUserBack-error-Invalid Username");
          exit();
        }
          // Email validation
        if (!filter_var($email,FILTER_VALIDATE_EMAIL)) ///if you want to put type text in input 
        {
-         header("location:index.php?page=ADD-USER-BACK&error=Invalid Email");
+         header("location:AddUserBack-error-Invalid Email");
          exit();
        }
          // Password match 
        if ($pwd != $repeatpwd) 
        {
-        header("location:index.php?page=ADD-USER-BACK&error=Password don't match");
+        header("location:AddUserBack-error-Password don't match");
         exit();
        }
        // Password length  i must but special password
        if (strlen($pwd) <= 4)
        {
-        header("location:index.php?page=ADD-USER-BACK&error=Choose a password longer then 4 character");
+        header("location:AddUserBack-error-Choose a password longer then 4 character");
         exit();
        }
        // User exsits or not and email 
@@ -78,20 +78,20 @@ class UserBackController extends SiteBaseController
        //test if user is exist in dbb
        if($verfyuser != false)
        {
-         header("location:index.php?page=ADD-USER-BACK&error=UserName is exsits");
+         header("location:AddUserBack-error-UserName is exsits");
          exit(); 
          //test if email is exist in dbb
        }
        if($verfyemail != false)
        {
-         header("location:index.php?page=ADD-USER-BACK&error=Email is exsits");
+         header("location:AddUserBack-error-Email is exsits");
          exit(); 
        } 
         //if all the test is ok so create the account
         $pwd_hashed = password_hash($pwd, PASSWORD_ARGON2ID);
         $model=new UserBack();
         $model->AddUsertoDbase($id_role,$user_name,$firstname,$lastname, $pwd_hashed,$email);
-        header("location:index.php?page=User-Back&error=New user has been  successfully added");
+        header("location:UserBack-error-New user has been  successfully added");
          exit();        
       }     
     }
@@ -100,7 +100,7 @@ class UserBackController extends SiteBaseController
      $id=$_GET["USER"];
      $model=new UserBack();
      $model->DeleteUserDbase($id);
-     header("location:index.php?page=User-Back&error= User has been  successfully deleted");
+     header("location:UserBack-error- User has been  successfully deleted");
      exit();        
     } 
     ///SHOW 
@@ -123,7 +123,7 @@ class UserBackController extends SiteBaseController
      $email=  $_POST['email'];
      $model=new UserBack();
      $model->UpDateUSERDbase($id_role,$user_name,$firstname,$lastname,$email,$id);
-     header("location:index.php?page=User-Back&error= User has been  successfully updated");
+     header("location:UserBack-error- User has been  successfully updated");
      exit();     
     } 
 

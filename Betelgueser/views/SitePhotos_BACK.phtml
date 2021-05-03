@@ -33,7 +33,7 @@
                     <td data-label="PHOTO-NAME"><?=htmlspecialchars($PHOTO['alt'])?></td>
                     <td data-label="DATE & TIME"><?=htmlspecialchars($PHOTO['date'])?></td>
                     <td data-label="ACTION"><a
-                            href="index.php?page=EDIT-SITE-PHOTOS&PHOTO=<?= htmlspecialchars($PHOTO['id_sitephotos']) ?>"
+                            href="editsitephotos-PHOTO-<?= htmlspecialchars($PHOTO['id_sitephotos']) ?>"
                             class="modify button"> <i class="fas fa-pencil-alt"></i> EDIT</a></td>
                 </tr>
                 <?php endforeach ?>
