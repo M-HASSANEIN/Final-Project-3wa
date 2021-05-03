@@ -1119,7 +1119,7 @@ MODEL -GALLERY
   display: block;
   width: 80%;
   max-width: 900px;
-  
+  position: relative;
 }
 
 
