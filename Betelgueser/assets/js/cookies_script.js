@@ -1,6 +1,6 @@
 //get all tag from html 
 let cookies =document.querySelector(".cookies");    
-let modal = document.getElementById("myModal");
+let modal = document.getElementById("mycookies");
 let button=document.querySelector(".cookies-accept");
 let betelguser;
 //show cookie after time 

@@ -266,7 +266,7 @@ COOKIES
     from {transform:scale(0)}
     to {transform:scale(1)}
   }
-  .modal {
+  .modalcookies {
     display: none; 
     position: fixed; 
     z-index: 1; 

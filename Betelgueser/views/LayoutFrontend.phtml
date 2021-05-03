@@ -38,7 +38,7 @@
     <!-- cookie-->
     <?php if(!isset($_COOKIE['betelguser'])): ?>
     <!-- The Modal -->
-    <div id="myModal" class="modal">
+    <div id="mycookies" class="modalcookies">
         <div class="cookies">
             <span class="cookies-message">We use cookies on this website, to ensure optimal experience while viewing our
                 site.</span>
@@ -65,8 +65,7 @@
                     <div class="session">
                         <p>Welcome<span> <?=$_SESSION['customer']?></span> </p>
                         <div class="dropdown">
-                            <a class="dropbtn" href="logoutuser">Sign out <i
-                                    class="fas fa-caret-down"></i> </a>
+                            <a class="dropbtn" href="logoutuser">Sign out <i class="fas fa-caret-down"></i> </a>
                             <div class="dropdown-content">
                                 <a href="changepassword"> Change PWD</a>
                                 <a href="mybooking">My booking</a>
