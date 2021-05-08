@@ -67,8 +67,7 @@ class SitePhotosController extends SiteBaseController
          include 'views/LayoutBackend.phtml';
          exit();
        }
-         
-
+        
        //if all is ok it will upload the photo 
        if (file_exists($NewSrc.$file_name))
        { 
