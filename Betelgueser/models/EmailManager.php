@@ -22,7 +22,7 @@ class EmailManager
             $this->mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
             $this->mail->SMTPAuth   = true;                                   //Enable SMTP authentication
             $this->mail->Username   = 'betelgueser.hurgada@gmail.com';                     //SMTP username
-            $this->mail->Password   = 'Bet@2020';                               //SMTP password
+            $this->mail->Password   = 'uunroapzbxzexryy';                               //SMTP password
             $this->mail->SMTPSecure = "TLS";         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
             $this->mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
         
