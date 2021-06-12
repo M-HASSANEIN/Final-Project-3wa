@@ -119,60 +119,44 @@ class CustomersController extends SiteBaseController
     }
     //connect user to the site
     public function  ConnectUser()
+    {  
+    $user=$_POST["userid"];
+    $pwd=$_POST["password"];
+    //test empty inputs
+    if( (empty($user) || empty($pwd) )== true )
     {
-      $error="";
-
-      if(isset($_POST["submit"]))
-      {  
-         $user=$_POST["userid"];
-         $pwd=$_POST["password"];
-        
-            //Verifcation empty inputs
-          if( (empty($user) || empty($pwd) )== true )
-          {
-          $error=" Please complete all fields";
-          $title="LogIn";
-          $template = 'CustomerLogIn.phtml';
-          include 'views/LayoutFrontend.phtml';
-          exit();
-          }
-            //test if user is exist or not 
-            $model=new Customers();
-            $verfiy_User=$model->checkLogIn($user,$user);
-            
-          if ($verfiy_User == false) 
-          {
-          $error=" Username is incorrect";
-          $title="LogIn";
-          $template = 'CustomerLogIn.phtml';
-          include 'views/LayoutFrontend.phtml';
-          exit();
-          }//verfiy the password
-          else {
-            $hash = $verfiy_User['password'];
-            if (password_verify($pwd, $hash))
-            {
+      $errors[]=" Please complete all fields";
+      echo json_encode(array("success"=>'false',
+                            "message"=>$errors,));
+    }else {
+        //test if user is exist or not 
+         $model=new Customers();
+         $verfiy_User=$model->checkLogIn($user,$user);
+         ////if user dont exists in data base
+        if ($verfiy_User == false) {
+        $errors[]=" Username is incorrect";
+        echo json_encode(array("success"=>'false',
+                               "message"=>$errors,));
+        }  //verfiy the password 
+         else {
+          $hash = $verfiy_User['password'];
+          if (password_verify($pwd, $hash))
+          { 
             //create session
-           /*  $_SESSION['customer'] =  $user=$_POST["userid"]; */
+            $_SESSION['customer'] =  $user=$_POST["userid"];
             $_SESSION['customer'] =  $verfiy_User["user_name"];
             $_SESSION['email'] =  $verfiy_User["email"];
             $_SESSION['id_client'] =  $verfiy_User["id_client"];
-             //call the tamp
-            $title="HOME";
-            $template = 'Home_Front.phtml';
-            include 'views/LayoutFrontend.phtml';
-            //if the password is not same 
-            }else {
-              $error=" Incorrect password";
-              $title="LogIn";
-              $template = 'CustomerLogIn.phtml';
-              include 'views/LayoutFrontend.phtml';
-              exit();
+            //redirect user to home
+            $sucsses=array("success"=>'true');
+            echo json_encode($sucsses);
+          }else {
+            $errors[]=" Incorrect password"; 
+            echo json_encode(array("success"=>'false',
+                                   "message"=>$errors,));
             }
           }
-  
-      }  
-
+       }
     }
     //log out user
     public function Logout()

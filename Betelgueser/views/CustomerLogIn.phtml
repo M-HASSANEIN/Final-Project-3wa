@@ -3,7 +3,7 @@
         <div id="formContent">
             <!-- Tabs Titles -->
             <h2 class="active"> LOG IN </h2>
-            <div class="error"> <?php if (isset($error)) : ?> <?=$error ;?>
+            <div id="error" class="error"> <?php if (isset($error)) : ?> <?=$error ;?>
                 <?php  else : ?> <?=""?>
                 <?php  endif ?>
             </div>
@@ -13,7 +13,7 @@
             </div>
 
             <!-- Login Form -->
-            <form action="connect" method="post">
+            <form action="connect" method="post" id="form">
                 <label for="userid"></label>
                 <input type="text" id="userid" class="fadeIn second" name="userid" placeholder="Username Or Email">
                 <label for="password"></label>
@@ -28,4 +28,5 @@
 
         </div>
     </div>
+    <script src="assets/js/validation-form.js"></script>
 </article>
